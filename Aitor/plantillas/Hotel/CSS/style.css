@@ -45,7 +45,7 @@ a {
 }
 header h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--primary-color);
+    color:white;
     text-align: center;
 }nav ul {
     list-style: none; /* Quita los puntos de la lista */
@@ -72,7 +72,7 @@ nav a:hover {
     display: flex;
     align-items: center;       /* Centra el contenido verticalmente */
     justify-content: center;    /* Centra el contenido horizontalmente */
-    color: white;
+    color: white  !important; /* Asegura que el texto sea blanco sobre la imagen */
 }
 
 .titulo-principal {
@@ -91,6 +91,7 @@ nav a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    color:#cfcdca;
 }
 
 .servicio-card:hover {
@@ -100,4 +101,13 @@ nav a:hover {
 .servicio-card i {
     font-size: 2rem;
     color: var(--secondary-color);
+}#sobre-nosotros {
+    background-color: #ffffff;      /* Rectángulo blanco */
+    border-radius: 20px;            /* Bordes redondeados (ajusta el número para más o menos redondeo) */
+    padding: 40px;                  /* Espacio interno para que el texto no toque los bordes */
+    margin: 50px auto;              /* Margen arriba/abajo y centrado horizontal */
+    max-width: 900px;               /* Limitamos el ancho para que no sea un rectángulo infinito */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Una sombra muy sutil para dar profundidad */
+    border: none;
+    color:dimgrey
 }
