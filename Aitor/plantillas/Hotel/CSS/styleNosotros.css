@@ -1,0 +1,150 @@
+/* =========================================
+   VARIABLES Y BASES (Consistentes con la captura)
+   ========================================= */
+:root {
+    --primary-green: #1e3932; /* El verde oscuro de la captura */
+    --dark-slate: #2d3436;
+    --accent-green: #27ae60;
+    --text-light: #cfcdca;
+    --white-card: #ffffff;
+    --main-font: 'Roboto', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+}
+
+body {
+    font-family: var(--main-font);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-slate) 100%);
+    background-attachment: fixed;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;   
+    justify-content: center;
+    gap: 40px;      
+    padding: 1.5rem;
+}
+
+nav a {
+    color: white !important; 
+    font-weight: bold;
+    letter-spacing: 1px;    
+    text-transform: uppercase; 
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-green) !important;
+    border-bottom: 2px solid var(--accent-green);
+}
+/* =========================================
+   CABECERA Y TÍTULOS
+   ========================================= */
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: white;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+
+.lead {
+    color: var(--accent-green);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   SECCIÓN HISTORIA
+   ========================================= */
+.historia {
+    padding: 60px 0;
+}
+
+.historia p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+}
+
+/* Ajuste para la imagen de la fachada */
+.historia img {
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4) !important;
+    transition: transform 0.5s ease;
+}
+
+.historia img:hover {
+    transform: scale(1.02);
+}
+
+/* =========================================
+   SECCIÓN VALORES (Estilo Tarjetas de la captura)
+   ========================================= */
+.valores {
+    /* Sobrescribimos el bg-light de bootstrap para que sea más elegante */
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    padding: 80px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+.valores article {
+    background: var(--white-card);
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.valores article:hover {
+    transform: translateY(-10px);
+}
+
+/* Iconos de los valores */
+.valores i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.valores h3 {
+    color: var(--primary-green);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.valores p {
+    color: #555; /* Texto oscuro para leer sobre la tarjeta blanca */
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    opacity: 0.7;
+}/* =========================================
+   SECCIÓN VALORES (CORREGIDA)
+   ========================================= */
+
+/* Forzamos al contenedor row a centrar sus elementos */
+.valores .row {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio uniforme entre tarjetas sin romper el layout */
+}
+

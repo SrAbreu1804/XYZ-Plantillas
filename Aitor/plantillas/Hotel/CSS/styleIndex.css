@@ -1,0 +1,218 @@
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /* Paleta de colores */
+  --primary-color: #2c3e50;
+  --secondary-color: #27ae60;
+  --accent-color: #e74c3c;
+  
+  /* Tipografías */
+  --main-font: 'Roboto', sans-serif;
+  --heading-font: 'Playfair Display', serif;
+
+  /* Espaciados estándar */
+  --spacing-unit: 1rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--main-font);
+  line-height: 1.6;
+  color: #cfcdca;
+  background: linear-gradient(135deg, #1e3932 0%, #2d3436 100%);
+    background-attachment: fixed;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}h1, h2, h3 {
+  font-family: var(--heading-font);
+  margin-bottom: var(--spacing-unit);
+  line-height: 1.2;
+}
+#titulo{
+  font-size: 2.5rem;
+  color: white;
+  
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+header h1{
+    font-family: var(--main-font);
+    color:dimgrey;
+    text-align: center;
+    padding: 20px 0;
+    margin: 20px 0;
+    
+    
+}nav {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;   
+    justify-content: center;
+    gap: 40px;      
+    padding: 1.5rem;
+}
+
+nav a {
+    color: white !important; 
+    font-weight: bold;
+    letter-spacing: 1px;    
+    text-transform: uppercase; 
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-green) !important;
+    border-bottom: 2px solid var(--accent-green);
+}.inicio {
+    height: 60vh; 
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;    
+    background-position: center;
+    display: flex;
+    align-items: center;      
+    justify-content: center;   
+    color: white  !important; 
+}
+
+.titulo-principal {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    padding: 50px 10%;
+    color:rgb(38, 95, 46);   
+}
+#imagenes_habitaciones,
+.servicio-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    color:rgb(105, 105, 105);
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px); 
+}
+
+.servicio-card i {
+    font-size: 2rem;
+    color:dimgrey;
+}#sobre-nosotros {
+    background-color: #ffffff;      
+    border-radius: 20px;            
+    padding: 40px;                  
+    margin: 50px auto;              
+    max-width: 900px;               
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    color:dimgrey
+}
+.habitaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    width: 100%;
+}
+#imagenes_habitaciones,
+.habitacion-card {
+    background: rgb(255, 255, 255); 
+    backdrop-filter: blur(10px);
+    border: 0px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: rgb(51, 51, 51);
+}
+
+.habitacion-card:hover {
+    transform: translateY(-10px);
+   
+}
+
+.habitacion-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+}
+
+.habitacion-info {
+    padding: 15px;
+}
+
+.habitacion-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.habitacion-info p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.precio {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #34772e; 
+}#imagenes_habitaciones{
+    background-attachment: fixed;
+    background-color: #cac5c5;
+}article div img {
+  border-radius: 10px;
+}#habitacion1 {
+    background-color: #f5f7f5;
+    color: #1a1d1a;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 10px;
+}#habitacion1 img {
+    margin-top: 10px;
+}#habitacion2 {
+    background-color: #f5f7f5;
+    color: #1a1d1a;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}#habitacion2 img {
+    margin-top: 10px;
+}#habitacion3 {
+    background-color: #f5f7f5;
+    color: #1a1d1a;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}#habitacion3 img {
+    margin-top: 10px;
+}
