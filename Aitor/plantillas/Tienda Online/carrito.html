@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito | Mi Tienda Online</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="header-placeholder"></div>
+   
+
+    <main class="cart-page">
+        <div class="container">
+            <h2 class="section-title">Tu Carrito de Compras</h2>
+
+            <div class="cart-container">
+                <section class="cart-items">
+                    <article class="cart-item">
+                        <div class="cart-item__image">
+                            <img src="https://via.placeholder.com/100" alt="Producto">
+                        </div>
+                        <div class="cart-item__details">
+                            <h3 class="cart-item__name">Smartphone Nova Z</h3>
+                            <p class="cart-item__category">Electrónica</p>
+                        </div>
+                        <div class="cart-item__quantity">
+                            <button class="btn-qty" aria-label="Disminuir">-</button>
+                            <input type="number" value="1" min="1" class="input-qty">
+                            <button class="btn-qty" aria-label="Aumentar">+</button>
+                        </div>
+                        <div class="cart-item__price">
+                            <span>999.00€</span>
+                        </div>
+                        <div class="cart-item__remove">
+                            <button class="btn-remove" title="Eliminar producto">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    </section>
+
+                <aside class="cart-summary">
+                    <h3 class="summary-title">Resumen del Pedido</h3>
+                    <div class="summary-details">
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span>999.00€</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Envío</span>
+                            <span>Gratis</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Impuestos (IVA)</span>
+                            <span>209.79€</span>
+                        </div>
+                        <hr>
+                        <div class="summary-line summary-line--total">
+                            <span>Total</span>
+                            <span>1208.79€</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-actions">
+                        <button class="btn-checkout">Finalizar Compra</button>
+                        <a href="productos.html" class="btn-continue">Seguir comprando</a>
+                    </div>
+
+                    <div class="payment-methods">
+                        <p>Pagos seguros con:</p>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-apple-pay"></i>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Mi Tienda Online - Todos los derechos reservados.</p>
+    </footer>
+<script src="JS/header.js"></script>
+</body>
+</html>
