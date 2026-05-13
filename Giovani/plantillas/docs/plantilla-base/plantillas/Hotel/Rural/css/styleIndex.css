@@ -21,18 +21,15 @@
   padding: 0;
 }
 :root {
-  /* Paleta de colores */
-  --primary-color: #2c3e50;
-  --secondary-color: #27ae60;
-  --accent-color: #e74c3c;
-  
-  /* Tipografías */
-  --main-font: 'Roboto', sans-serif;
-  --heading-font: 'Playfair Display', serif;
-
-  /* Espaciados estándar */
-  --spacing-unit: 1rem;
+    --primary-green: #1e3932;
+    --dark-slate: #2d3436;
+    --accent-green: #27ae60;
+    --text-light: #cfcdca;
+    --white-card: #ffffff;
+    --main-font: 'Roboto', sans-serif;
+    --heading-font: 'Playfair Display', serif;
 }
+
 html {
   scroll-behavior: smooth;
 }
