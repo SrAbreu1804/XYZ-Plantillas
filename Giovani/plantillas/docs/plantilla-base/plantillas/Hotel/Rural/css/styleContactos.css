@@ -1,0 +1,154 @@
+.Hotel {
+    background-color: #1a2a26; 
+    padding: 40px 0;
+    text-align: center;
+    color: white; 
+}
+
+.Hotel h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: white; 
+}
+
+
+/* =========================================
+   VARIABLES Y BASES (Identidad Visual)
+   ========================================= */
+:root {
+    --primary-green: #1e3932;
+    --dark-slate: #2d3436;
+    --accent-green: #27ae60;
+    --text-light: #cfcdca;
+    --white-card: #ffffff;
+    --main-font: 'Roboto', sans-serif;
+    --heading-font: 'Playfair Display', serif;
+}
+
+
+body {
+    font-family: var(--main-font);
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-slate) 100%);
+    background-attachment: fixed;
+    color: var(--text-light);
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;   
+    justify-content: center;
+    gap: 40px;      
+    padding: 1.5rem;
+}
+
+nav a {
+    color: white !important; 
+    font-weight: bold;
+    letter-spacing: 1px;    
+    text-transform: uppercase; 
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-green) !important;
+    border-bottom: 2px solid var(--accent-green);
+}
+/* =========================================
+   CABECERA
+   ========================================= */
+.cabecera-contacto h1 {
+    font-family: var(--heading-font);
+    font-size: 3.5rem;
+    color: white;
+}
+
+.cabecera-contacto .lead {
+    color: var(--accent-green);
+}
+
+/* =========================================
+   BLOQUE DE CONTACTO (ESTILO CAPTURA)
+   ========================================= */
+.contacto-contenido .row {
+    display: flex;
+    align-items: stretch; /* Para que ambas tarjetas tengan la misma altura */
+    gap: 20px;
+    justify-content: center;
+}
+
+.info-contacto, .formulario-contacto {
+    background: var(--white-card);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    color: #333; /* Texto oscuro para legibilidad */
+    margin-bottom: 20px;
+}
+
+/* Títulos dentro de las tarjetas blancas */
+.info-contacto h2, .formulario-contacto h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-green);
+    margin-bottom: 25px;
+}
+
+/* Estilo de los items de información */
+.info-contacto p {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+
+.info-contacto i {
+    color: var(--accent-green);
+    font-size: 1.4rem;
+}
+
+/* Iconos sociales en contacto */
+.redes-contacto {
+    margin-top: 30px;
+}
+
+.redes-contacto a {
+    font-size: 1.8rem;
+    margin-right: 20px;
+    color: var(--primary-green);
+    transition: 0.3s;
+}
+
+.redes-contacto a:hover {
+    color: var(--accent-green);
+}
+
+/* =========================================
+   FORMULARIO (INPUTS ELEGANTES)
+   ========================================= */
+.form-label {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+.form-control:focus {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 0.25rem rgba(39, 174, 96, 0.1);
+}
+
+.btn-enviar {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 12;}

@@ -17,10 +17,10 @@
             <a class="navbar-brand logo-clinica" href="index.html">Fisio<span>Life</span></a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -33,14 +33,14 @@
             <div class="col-md-7">
                 <div class="formulario-box">
                     <h2 class="formulario-box__title">Solicita tu Cita</h2>
-                    <form action="https://formsubmit.co/tuemail@gmail.com" method="POST" class="form-clinica">
+                    <form action="https://formsubmit.co/tuemail" method="POST" class="form-clinica">
                         <div class="mb-3">
                             <label class="form-label">Nombre Completo</label>
                             <input type="text" name="nombre" class="form-control input-clinica" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Teléfono de Contacto</label>
-                            <input type="tel" name="telefono" class="form-control input-clinica" required>
+                            <input type="tel" name="telefono" pattern="[0-9]{9,15}" class="form-control input-clinica" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Especialidad</label>
@@ -56,9 +56,17 @@
             <div class="col-md-5">
                 <div class="info-contacto-box">
                     <h3 class="info-contacto-box__title">Datos de Contacto</h3>
-                    <p class="info-contacto-box__item"><i class="bi bi-geo-alt"></i> Calle Salud, 12. Local B.</p>
+                    <p class="info-contacto-box__item"><i class="bi bi-geo-alt"></i> Carretera San Antonio, nº259. Breña Baja, Santa Cruz de Tenerife</p>
                     <div class="mapa-wrapper">
-                        </div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1041.029145504523!2d-17.7680357319246!3d28.64202659391533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6bedb18f227f8d%3A0x26f4cbeb5ff76e5d!2sXYZ%20Digital!5e0!3m2!1ses!2ses!4v1778663110578!5m2!1ses!2ses" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>

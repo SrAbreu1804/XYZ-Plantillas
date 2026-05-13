@@ -137,6 +137,58 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
+
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas si hay pocas */
+    gap: 30px; /* Espacio entre ellas */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* La tarjeta individual */
+.servicio-card {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px; /* Base de 300px, crece y encoge según el espacio */
+    max-width: 380px; /* Evita que se hagan gigantes si hay solo una */
+    transition: var(--transicion);
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+.servicio-card__content {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ocupa todo el alto de la tarjeta */
+    justify-content: space-between; /* Alinea título arriba, texto en medio y botón abajo */
+}
+
+.servicio-card__text {
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Absorbe el espacio sobrante */
+    min-height: 5rem; /* Ajusta este valor según el párrafo más largo que tengas */
+    display: flex;
+    align-items: center;
+}
+
 /* --- 7. FORMULARIO Y CONTACTO --- */
 .formulario-box {
     background: var(--gris-claro);
