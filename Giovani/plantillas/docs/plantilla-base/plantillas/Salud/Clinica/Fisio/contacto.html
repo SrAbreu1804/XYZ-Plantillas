@@ -33,23 +33,34 @@
             <div class="col-md-7">
                 <div class="formulario-box">
                     <h2 class="formulario-box__title">Solicita tu Cita</h2>
-                    <form action="https://formsubmit.co/tuemail" method="POST" class="form-clinica">
+                    <form action="https://formsubmit.co/giovannibareadomingues@gmail.com" method="POST" class="form-gimnasio">
+    
                         <div class="mb-3">
-                            <label class="form-label">Nombre Completo</label>
-                            <input type="text" name="nombre" class="form-control input-clinica" required>
+                            <label for="nombre" class="form-label">Nombre Completo</label>
+                            <input type="text" name="name" class="form-control input-gimnasio" placeholder="Tu nombre y apellidos" required>
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label">Teléfono de Contacto</label>
-                            <input type="tel" name="telefono" pattern="[0-9]{9,15}" class="form-control input-clinica" required>
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" name="email" class="form-control input-gimnasio" placeholder="ejemplo@correo.com" required>
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label">Especialidad</label>
-                            <select name="especialidad" class="form-select input-clinica">
-                                <option value="fisioterapia">Fisioterapia General</option>
-                                <option value="osteopatia">Osteopatía</option>
+                            <label for="telefono" class="form-label">Teléfono de Contacto</label>
+                            <input type="tel" name="telefono" pattern="[0-9]{9,15}" class="form-control input-gimnasio" placeholder="600000000" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="servicio" class="form-label">Interés principal</label>
+                            <select name="servicio" class="form-select input-gimnasio">
+                                <option value="musculacion">Musculación y Pesas</option>
+                                <option value="cardio">Crossfit / HIIT</option>
+                                <option value="yoga">Yoga y Pilates</option>
+                                <option value="personal">Entrenamiento Personalizado</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+
+                        <button type="submit" class="btn-enviar-gym w-100">SOLICITAR INFORMACIÓN</button>
                     </form>
                 </div>
             </div>
