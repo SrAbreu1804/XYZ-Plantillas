@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.buscador-container {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#miBuscador {
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+#miBuscador:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,123,255,0.4);
+}
+
+.galeria { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card { 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+.card img { width: 100%; height: 180px; object-fit: cover; }
+
+.card-content { padding: 20px; text-align: center; }
+
+.card h3 { margin: 0 0 10px 0; color: #333; }
+
+.card p { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+
+.btn-abrir { 
+    display: inline-block; 
+    padding: 10px 20px; 
+    background: #007bff; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 20px;
+    font-weight: bold;
+}

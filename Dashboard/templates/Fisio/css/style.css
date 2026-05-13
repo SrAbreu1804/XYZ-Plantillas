@@ -1,0 +1,239 @@
+/* --- 1. VARIABLES GLOBALES (Personalización rápida) --- */
+:root {
+    --color-primario: #00a8cc;    /* Azul Turquesa Fisio */
+    --color-secundario: #007fa3;  /* Azul más oscuro para hover */
+    --color-acento: #e1f5fe;      /* Fondo suave para secciones */
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --texto-oscuro: #2c3e50;
+    --texto-suave: #7f8c8d;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* --- 2. ESTILOS BASE --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    background-color: var(--blanco);
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--texto-oscuro);
+}
+
+.seccion-pagina {
+    padding: 80px 0;
+}
+
+/* --- 3. NAVEGACIÓN --- */
+.navbar-clinica {
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    padding: 15px 0;
+}
+
+.logo-clinica {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--texto-oscuro) !important;
+    text-transform: uppercase;
+}
+
+.logo-clinica span {
+    color: var(--color-primario);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--texto-oscuro) !important;
+    margin-left: 20px;
+    transition: var(--transicion);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primario) !important;
+}
+
+/* --- 4. HERO SECTION (Inicio) --- */
+.hero-clinica {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.hero-clinica__title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-clinica__text {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 5. BOTONES --- */
+.btn-clinica {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transicion);
+    display: inline-block;
+}
+
+.btn-clinica--primary {
+    background-color: var(--color-primario);
+    color: var(--blanco);
+}
+
+.btn-clinica--primary:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+.btn-clinica--outline {
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+    margin-left: 15px;
+}
+
+.btn-clinica--outline:hover {
+    background-color: var(--blanco);
+    color: var(--color-primario);
+}
+
+/* --- 6. CARDS DE SERVICIOS --- */
+.card-tratamiento {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+    height: 100%;
+    border-bottom: 4px solid transparent;
+}
+
+.card-tratamiento:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primario);
+}
+
+.card-tratamiento__icon {
+    font-size: 3rem;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+}
+
+
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas si hay pocas */
+    gap: 30px; /* Espacio entre ellas */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* La tarjeta individual */
+.servicio-card {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px; /* Base de 300px, crece y encoge según el espacio */
+    max-width: 380px; /* Evita que se hagan gigantes si hay solo una */
+    transition: var(--transicion);
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+.servicio-card__content {
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ocupa todo el alto de la tarjeta */
+    justify-content: space-between; /* Alinea título arriba, texto en medio y botón abajo */
+}
+
+.servicio-card__text {
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Absorbe el espacio sobrante */
+    min-height: 5rem; /* Ajusta este valor según el párrafo más largo que tengas */
+    display: flex;
+    align-items: center;
+}
+
+/* --- 7. FORMULARIO Y CONTACTO --- */
+.formulario-box {
+    background: var(--gris-claro);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.input-clinica {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.input-clinica:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 0.2rem rgba(0, 168, 204, 0.25);
+}
+
+.btn-enviar {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: var(--transicion);
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-primario);
+}
+
+.mapa-wrapper {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+    background: #eee;
+}
+
+/* --- 8. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-clinica__title { font-size: 2.5rem; }
+    .seccion-pagina { padding: 40px 0; }
+    .btn-clinica--outline { margin-left: 0; margin-top: 10px; }
+}

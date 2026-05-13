@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | David Hernández</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div id="header-placeholder"></div>
+    <main class="profile-page">
+        <div class="container profile-container">
+            
+            <aside class="profile-sidebar">
+                <div class="profile-user-info">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>David Hernández</h3>
+                </div>
+                <nav class="profile-nav">
+                    <a href="#datos" class="profile-nav__link active"><i class="fas fa-id-card"></i> Mis Datos</a>
+                    <a href="#historial" class="profile-nav__link"><i class="fas fa-history"></i> Historial de Pedidos</a>
+                    <a href="#facturas" class="profile-nav__link"><i class="fas fa-file-invoice-dollar"></i> Mis Facturas</a>
+                    <a href="#seguimiento" class="profile-nav__link"><i class="fas fa-truck"></i> En Camino</a>
+                    <a href="#" class="profile-nav__link profile-nav__link--logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                </nav>
+            </aside>
+
+            <section class="profile-content">
+                
+                <div id="datos" class="profile-section">
+                    <h2 class="profile-section__title">Datos Personales</h2>
+                    <div class="profile-card">
+                        <div class="info-group">
+                            <label>Nombre Completo</label>
+                            <p>David Hernández Concepción</p>
+                        </div>
+                        <div class="info-group">
+                            <label>E-mail</label>
+                            <p>davidconhdez@gmail.com</p>
+                        </div>
+                        <div class="info-group">
+                            <label>Dirección de Envío</label>
+                            <p>Breña Baja, La Palma, España</p>
+                        </div>
+                        <button class="btn-edit">Editar Perfil</button>
+                    </div>
+                </div>
+
+                <div id="seguimiento" class="profile-section">
+                    <h2 class="profile-section__title">Pedidos en Curso</h2>
+                    <div class="status-card">
+                        <div class="status-header">
+                            <span>Pedido #88234</span>
+                            <span class="badge badge--shipping">En camino</span>
+                        </div>
+                        <p>Entrega estimada: 15 de Mayo, 2026</p>
+                        </div>
+                </div>
+
+                <div id="historial" class="profile-section">
+                    <h2 class="profile-section__title">Historial de Pedidos</h2>
+                    <table class="profile-table">
+                        <thead>
+                            <tr>
+                                <th>ID Pedido</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#88120</td>
+                                <td>10/04/2026</td>
+                                <td>150.00€</td>
+                                <td>Entregado</td>
+                            </tr>
+                            <tr>
+                                <td>#87950</td>
+                                <td>22/03/2026</td>
+                                <td>45.99€</td>
+                                <td>Entregado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="facturas" class="profile-section">
+                    <h2 class="profile-section__title">Mis Facturas</h2>
+                    <ul class="invoice-list">
+                        <li class="invoice-item">
+                            <span>Factura_ABR_2026.pdf</span>
+                            <button class="btn-download"><i class="fas fa-download"></i></button>
+                        </li>
+                        <li class="invoice-item">
+                            <span>Factura_MAR_2026.pdf</span>
+                            <button class="btn-download"><i class="fas fa-download"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Mi Tienda Online - Todos los derechos reservados.</p>
+    </footer>
+<script src="JS/header.js"></script>
+</body>
+</html>
