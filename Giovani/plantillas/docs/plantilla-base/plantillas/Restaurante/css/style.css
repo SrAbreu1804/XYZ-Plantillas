@@ -1,0 +1,130 @@
+/* ===================================================
+   1. VARIABLES Y ESTRUCTURA GLOBAL
+   =================================================== */
+:root {
+    --dorado: #d4af37;
+    --negro-fondo: #0a0a0a;
+    --blanco-hueso: #f8f5f0;
+    --texto-oscuro: #1a1a1a;
+    --texto-suave: #666666;
+}
+
+html, body { height: 100%; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+main { flex: 1 0 auto; }
+
+/* ===================================================
+   2. REFUERZO CRÍTICO PARA ICONOS (Causa del error)
+   =================================================== */
+/* Esta regla obliga al navegador a usar la fuente de Bootstrap para los iconos */
+.card-icon-wrapper i, .card-icon i, .iconos-sociales i {
+    display: inline-block !important;
+    font-family: "bootstrap-icons" !important; /* Indica que use la librería del link */
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1 !important;
+    color: var(--dorado) !important; /* Color oro de tu imagen */
+    font-size: 3.5rem !important;    /* Tamaño grande */
+    margin-bottom: 15px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Iconos más pequeños para el footer */
+.iconos-sociales i { font-size: 1.5rem !important; }
+
+/* ===================================================
+   3. CABECERA (Header)
+   =================================================== */
+.main-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 0 40px 0;
+    border-bottom: 2px solid var(--dorado);
+}
+
+.brand-logo {
+    color: var(--blanco-hueso) !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.main-navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.nav-link {
+    color: rgba(248, 245, 240, 0.8) !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-link.active { color: var(--dorado) !important; }
+
+/* ===================================================
+   4. TARJETAS (Unificadas: Index y Carta)
+   =================================================== */
+.grid-container, .contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.custom-card{
+    background: #fff;
+    padding: 40px 30px;
+    border-top: 4px solid var(--dorado);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.text-muted-custom, .texto-suave {
+    color: var(--texto-suave);
+    margin-bottom: 25px;
+}
+
+/* Botones alineados */
+.custom-card .btn, .btn {
+    margin-top: auto;
+    background-color: transparent !important;
+    color: var(--texto-oscuro) !important;
+    border: 2px solid var(--texto-oscuro) !important;
+    border-radius: 0 !important;
+    font-weight: 700;
+}
+
+.custom-card .btn:hover, .btn:hover {
+    background-color: var(--texto-oscuro) !important;
+    color: var(--dorado) !important;
+}
+
+/* ===================================================
+   5. PIE DE PÁGINA (Footer)
+   =================================================== */
+footer {
+    background-color: var(--negro-fondo);
+    color: var(--blanco-hueso);
+    padding: 40px 0;
+    border-top: 3px solid var(--dorado);
+    text-align: center;
+}

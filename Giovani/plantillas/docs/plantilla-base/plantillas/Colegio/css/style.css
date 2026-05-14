@@ -1,0 +1,181 @@
+/* ===================================================
+   1. VARIABLES Y RESET
+   =================================================== */
+:root {
+    --colegio-principal: #1a365d; /* Azul Oxford */
+    --colegio-acento: #d4af37;    /* Dorado Académico */
+    --blanco: #ffffff;
+    --gris-fondo: #f8fafc;
+}
+
+body {
+    background-color: var(--gris-fondo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================================
+   2. ESTILO DEL HEADER
+   =================================================== */
+.header-main {
+    background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), 
+                url('https://images.unsplash.com/photo-1523050853063-bd8012fec046?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 60px;
+}
+
+/* Barra de navegación */
+.navbar-colegio {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo del Logo */
+.logo-colegio {
+    color: var(--blanco) !important;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.logo-colegio::first-letter {
+    color: var(--colegio-acento);
+    font-size: 2.2rem;
+}
+
+/* Enlaces del menú */
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--colegio-acento) !important;
+}
+
+.nav-link.active {
+    color: var(--colegio-acento) !important;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--colegio-acento);
+    border-radius: 2px;
+}
+
+/* ===================================================
+   3. ESTILO DEL MAIN
+   =================================================== */
+main {
+    padding: 60px 0 80px 0;
+}
+
+/* Título de la sección con subrayado dorado */
+h2.text-center {
+    color: var(--colegio-principal);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2.text-center::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--colegio-acento);
+}
+
+/* Contenedor Grid */
+.contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Tarjetas*/
+.card-colegio {
+    background: var(--blanco);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-colegio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--colegio-acento);
+}
+
+.card-colegio:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(26, 54, 93, 0.12);
+}
+
+/* Iconos y Texto */
+.card-icon {
+    font-size: 3rem;
+    color: var(--colegio-principal) !important;
+    margin-bottom: 20px;
+}
+
+.card-colegio h3 {
+    color: var(--colegio-principal);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.texto-suave {
+    color: #5a677a;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--colegio-principal) !important;
+    border: none !important;
+    padding: 12px 25px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    transition: 0.3s !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--colegio-acento) !important;
+    color: var(--colegio-principal) !important;
+}
