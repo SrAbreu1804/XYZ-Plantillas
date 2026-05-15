@@ -1,4 +1,4 @@
-/* --- VARIABLES GLOBALES --- */
+/*VARIABLES GLOBALES*/
 :root {
     --const-primario: #2b2d42;
     --const-acento: #f3722c;
@@ -8,75 +8,87 @@
     --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/*ESTILOS BASE*/
 body {
     background-color: var(--const-fondo);
     font-family: 'Roboto', sans-serif;
     color: var(--texto-cuerpo);
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la pantalla */
 }
 
-/* --- HEADER --- */
+/*HEADER*/
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000');
     background-size: cover;
+    background-position: center;
     padding: 40px 20px;
     border-bottom: 5px solid var(--const-acento);
 }
 
-.logo-link { text-decoration: none !important; color: inherit; }
-header h1 { color: var(--blanco); text-transform: uppercase; letter-spacing: 2px; }
+.logo-link { text-decoration: none !important; color: inherit; text-align: center; }
+header h1 { color: var(--blanco); text-transform: uppercase; letter-spacing: 2px; margin: 0; }
 header h1 span { color: var(--const-acento); }
-header p { color: var(--blanco); opacity: 0.8; font-size: 0.8rem; margin: 0; }
+header p { color: var(--blanco); opacity: 0.8; font-size: 0.8rem; margin: 5px 0 0 0; }
 
-nav ul { display: flex; list-style: none; gap: 20px; padding: 20px 0 0 0; }
-.nav-link { color: var(--blanco) !important; text-decoration: none; font-weight: bold; text-transform: uppercase; }
-.nav-link.active { color: var(--const-acento) !important; border-bottom: 2px solid var(--const-acento); }
+nav ul { display: flex; list-style: none; gap: 20px; padding: 20px 0 0 0; margin: 0; }
+.nav-link { color: var(--blanco) !important; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+.nav-link:hover, .nav-link.active { color: var(--const-acento) !important; }
 
-/* CONTENIDO */
+/*CONTENIDO PRINCIPAL*/
 main {
-    padding: 60px 0 100px 0; /* Aumentamos el margen inferior para el footer */
-    min-height: 70vh;
-    display: block;
-    overflow: visible; /* Importante para que no corte sombras */
+    flex: 1; /* Esto empuja el footer al final de la página */
+    padding: 60px 0;
+}
+
+/* ---TARJETAS--- */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4, .col-md-6, .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px; /* Espacio vertical entre filas */
 }
 
 article {
     background: var(--blanco);
-    padding: 30px;
-    border-radius: 4px;
+    padding: 35px;
+    border-radius: 8px;
     box-shadow: var(--sombra);
     
-    height: auto !important;      
-    min-height: 100%;             
+    flex-grow: 1; 
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    transition: transform 0.3s ease;
-    margin-bottom: 20px;
-    overflow: hidden;             /* Mantiene el contenido dentro de los bordes */
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 article i { 
     font-size: 3rem; 
     color: var(--const-acento); 
     margin-bottom: 20px; 
-    display: block; 
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col-md-4, .col-md-6, .col-12 {
-    display: flex;
-    flex-direction: column;
+article h3, article h2 {
+    color: var(--const-primario);
+    font-weight: 800;
+    margin-bottom: 15px;
 }
 
 /* --- FOOTER --- */
@@ -85,12 +97,21 @@ footer {
     color: var(--blanco);
     padding: 40px 0;
     text-align: center;
-    width: 100%;
+    margin-top: auto; /* Ancla el footer al final */
 }
 
-.iconos-sociales a { color: var(--blanco); font-size: 1.5rem; margin: 0 10px; }
+.iconos-sociales a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+}
 
-/* --- RESPONSIVE ADAPTATIVO --- */
+.iconos-sociales a:hover {
+    color: var(--const-acento);
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.6rem;
