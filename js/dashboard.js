@@ -29,6 +29,12 @@ const myProjects = [
         icon: "bi bi-cup-hot", 
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Restaurante/index.html" 
+    },
+    {
+        name: "Construcción",
+        icon: "bi bi-cone-striped",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Construccion/index.html"
     }
 ];  
 

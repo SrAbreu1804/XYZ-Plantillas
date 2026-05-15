@@ -1,0 +1,107 @@
+/* --- VARIABLES GLOBALES --- */
+:root {
+    --const-primario: #2b2d42;
+    --const-acento: #f3722c;
+    --const-fondo: #edf2f4;
+    --blanco: #ffffff;
+    --texto-cuerpo: #4a4e69;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--const-fondo);
+    font-family: 'Roboto', sans-serif;
+    color: var(--texto-cuerpo);
+    margin: 0;
+    padding: 0;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000');
+    background-size: cover;
+    padding: 40px 20px;
+    border-bottom: 5px solid var(--const-acento);
+}
+
+.logo-link { text-decoration: none !important; color: inherit; }
+header h1 { color: var(--blanco); text-transform: uppercase; letter-spacing: 2px; }
+header h1 span { color: var(--const-acento); }
+header p { color: var(--blanco); opacity: 0.8; font-size: 0.8rem; margin: 0; }
+
+nav ul { display: flex; list-style: none; gap: 20px; padding: 20px 0 0 0; }
+.nav-link { color: var(--blanco) !important; text-decoration: none; font-weight: bold; text-transform: uppercase; }
+.nav-link.active { color: var(--const-acento) !important; border-bottom: 2px solid var(--const-acento); }
+
+/* CONTENIDO */
+main {
+    padding: 60px 0 100px 0; /* Aumentamos el margen inferior para el footer */
+    min-height: 70vh;
+    display: block;
+    overflow: visible; /* Importante para que no corte sombras */
+}
+
+article {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: var(--sombra);
+    
+    height: auto !important;      
+    min-height: 100%;             
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    overflow: hidden;             /* Mantiene el contenido dentro de los bordes */
+}
+
+article i { 
+    font-size: 3rem; 
+    color: var(--const-acento); 
+    margin-bottom: 20px; 
+    display: block; 
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4, .col-md-6, .col-12 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--const-primario);
+    color: var(--blanco);
+    padding: 40px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.iconos-sociales a { color: var(--blanco); font-size: 1.5rem; margin: 0 10px; }
+
+/* --- RESPONSIVE ADAPTATIVO --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+    }
+}
