@@ -1,4 +1,3 @@
-/* --- 1. VARIABLES GLOBALES (Personalización rápida) --- */
 :root {
     --color-primario: #00a8cc;    /* Azul Turquesa Fisio */
     --color-secundario: #007fa3;  /* Azul más oscuro para hover */
@@ -232,8 +231,267 @@ h1, h2, h3 {
 }
 
 /* --- 8. RESPONSIVE --- */
+.navbar-clinica {
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    padding: 15px 0;
+}
+
+.navbar-clinica .container {
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center;
+}
+
+.logo-clinica {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--texto-oscuro) !important;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo-clinica span {
+    color: var(--color-primario);
+}
+
+.nav-links-lista {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--texto-oscuro) !important;
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primario) !important;
+}
+
+/* --- 1. VARIABLES GLOBALES --- */
+:root {
+    --color-primario: #00a8cc;
+    --color-secundario: #007fa3;
+    --color-acento: #e1f5fe;
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --texto-oscuro: #2c3e50;
+    --texto-suave: #7f8c8d;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* --- 2. ESTILOS BASE --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    background-color: var(--blanco);
+    margin: 0;
+    overflow-x: hidden; /* Evita desplazamiento horizontal accidental */
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--texto-oscuro);
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* --- 3. NAVEGACIÓN (Corregida para fluidez) --- */
+.navbar-clinica {
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    padding: 15px 0;
+}
+
+.navbar-clinica .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que el menú baje si no cabe */
+}
+
+.logo-clinica {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--texto-oscuro) !important;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo-clinica span {
+    color: var(--color-primario);
+}
+
+.nav-links-lista {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--texto-oscuro) !important;
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primario) !important;
+}
+
+/* --- 4. HERO SECTION --- */
+.hero-clinica {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh; /* Cambiado a min-height para móviles */
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero-clinica__title {
+    font-size: clamp(1.8rem, 8vw, 3.5rem); /* Tamaño fluido según pantalla */
+    margin-bottom: 20px;
+}
+
+.hero-clinica__text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 5. BOTONES (Ajuste de alineación) --- */
+.hero-clinica__actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-clinica {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transicion);
+    display: inline-block;
+    text-align: center;
+    min-width: 180px;
+}
+
+.btn-clinica--primary {
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    border: 2px solid var(--color-primario);
+}
+
+.btn-clinica--outline {
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+}
+
+/* --- 8. RESPONSIVE (Móviles y Tablets) --- */
+
+/* Ajuste general para evitar solapamiento con el footer */
+.hero-clinica {
+    min-height: 80vh; /* Cambiado de height a min-height para que crezca si el contenido lo necesita */
+    height: auto; 
+    padding: 60px 0;
+}
+
+/* Tablets y móviles grandes */
 @media (max-width: 768px) {
-    .hero-clinica__title { font-size: 2.5rem; }
-    .seccion-pagina { padding: 40px 0; }
-    .btn-clinica--outline { margin-left: 0; margin-top: 10px; }
+    .navbar-clinica .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links-lista {
+        gap: 15px;
+        justify-content: center;
+    }
+}
+
+/* Móviles pequeños (300px - 576px) */
+@media (max-width: 576px) {
+    .nav-links-lista {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste de botones amontonados en vertical */
+    .hero-clinica__actions {
+        flex-direction: column; 
+        align-items: center;
+        gap: 12px;
+    }
+
+    .btn-clinica {
+        width: 100%; 
+        max-width: 280px;
+        margin-left: 0 !important; 
+    }
+
+    .hero-clinica__text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+/* CORRECCIÓN FINAL: Modo Horizontal (Landscape) */
+/* Si la pantalla tiene poca altura, evitamos que los botones pisen el footer */
+@media (max-height: 550px) and (orientation: landscape) {
+    .hero-clinica {
+        min-height: 100vh; /* Asegura que el fondo cubra todo */
+        padding: 40px 0;
+    }
+
+    .hero-clinica__actions {
+        flex-direction: row !important; /* En horizontal, mejor uno al lado del otro */
+        gap: 10px;
+    }
+
+    .btn-clinica {
+        width: auto;
+        min-width: 150px;
+        padding: 10px 20px;
+    }
+}
+
+/* Pantallas extremadamente estrechas (300px) */
+@media (max-width: 350px) {
+    .logo-clinica {
+        font-size: 1.2rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+    }
 }

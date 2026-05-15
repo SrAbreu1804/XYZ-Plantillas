@@ -1,9 +1,7 @@
-/* ===================================================
-   1. VARIABLES Y RESET
-   =================================================== */
+
 :root {
-    --colegio-principal: #1a365d; /* Azul Oxford */
-    --colegio-acento: #d4af37;    /* Dorado Académico */
+    --colegio-principal: #1a365d; /* Azul*/
+    --colegio-acento: #d4af37;    /* Dorado*/
     --blanco: #ffffff;
     --gris-fondo: #f8fafc;
 }
@@ -15,9 +13,7 @@ body {
     padding: 0;
 }
 
-/* ===================================================
-   2. ESTILO DEL HEADER
-   =================================================== */
+/*HEADER*/
 .header-main {
     background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), 
                 url('https://images.unsplash.com/photo-1523050853063-bd8012fec046?q=80&w=2000');
@@ -78,9 +74,7 @@ body {
     border-radius: 2px;
 }
 
-/* ===================================================
-   3. ESTILO DEL MAIN
-   =================================================== */
+/* 3. MAIN */
 main {
     padding: 60px 0 80px 0;
 }
@@ -178,4 +172,91 @@ h2.text-center::after {
 .btn-primary:hover {
     background-color: var(--colegio-acento) !important;
     color: var(--colegio-principal) !important;
+}
+
+/* RESPONSIVE COLEGIO (Ajuste de Tarjetas y Menú) */
+
+/* Ajuste para tablets y móviles (Menú y Header) */
+/* Ajuste para Tablets y Escritorios Pequeños (Debajo de 992px) */
+@media (max-width: 991px) {
+    /* 1. Forzamos que el encabezado mantenga su fondo y visibilidad */
+    .header-main {
+        padding-bottom: 30px !important;
+        background-attachment: scroll; /* Mejora rendimiento en móviles */
+    }
+
+    /* 2. Forzamos que el menú sea visible aunque no haya botón toggler */
+    .navbar-collapse {
+        display: block !important; 
+        width: 100%;
+    }
+
+    /* 3. Alineación del Logo y el Menú en vertical */
+    .navbar-colegio .container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .logo-colegio {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* 4. Diseño del menú tipo "lista limpia" para móvil */
+    .navbar-nav {
+        flex-direction: column !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.05); /* Sutil contraste */
+        border-radius: 12px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        margin: 0 !important;
+        padding: 12px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Quitamos la línea dorada inferior en móvil para que no flote rara */
+    .nav-link.active::after {
+        display: none;
+    }
+    
+    .nav-link.active {
+        background: rgba(212, 175, 55, 0.1); /* Fondo dorado suave para el activo */
+        color: var(--colegio-acento) !important;
+    }
+
+    /* 5. Ajuste de las tarjetas y el grid */
+    .contenedor-servicios {
+        grid-template-columns: 1fr !important; /* Una sola columna */
+        padding: 0 20px;
+    }
+
+    h2.text-center {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Ajustes extra para móviles muy pequeños */
+@media (max-width: 576px) {
+    .header-main {
+        padding-top: 20px !important;
+    }
+    
+    .logo-colegio {
+        font-size: 1.5rem !important;
+    }
 }

@@ -21,9 +21,6 @@ body {
 
 main { flex: 1 0 auto; }
 
-/* ===================================================
-   2. REFUERZO CRÍTICO PARA ICONOS (Causa del error)
-   =================================================== */
 /* Esta regla obliga al navegador a usar la fuente de Bootstrap para los iconos */
 .card-icon-wrapper i, .card-icon i, .iconos-sociales i {
     display: inline-block !important;
@@ -43,7 +40,7 @@ main { flex: 1 0 auto; }
 .iconos-sociales i { font-size: 1.5rem !important; }
 
 /* ===================================================
-   3. CABECERA (Header)
+   3. Header
    =================================================== */
 .main-header {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
@@ -79,7 +76,7 @@ main { flex: 1 0 auto; }
 .nav-link.active { color: var(--dorado) !important; }
 
 /* ===================================================
-   4. TARJETAS (Unificadas: Index y Carta)
+   4. TARJETAS
    =================================================== */
 .grid-container, .contenedor-servicios {
     display: grid;
@@ -119,7 +116,7 @@ main { flex: 1 0 auto; }
 }
 
 /* ===================================================
-   5. PIE DE PÁGINA (Footer)
+   5. Footer
    =================================================== */
 footer {
     background-color: var(--negro-fondo);
@@ -127,4 +124,79 @@ footer {
     padding: 40px 0;
     border-top: 3px solid var(--dorado);
     text-align: center;
+}
+
+/* ===================================================
+   8. RESPONSIVE
+   =================================================== */
+
+/* Ajuste del Menú de Navegación */
+@media (max-width: 768px) {
+    .main-navbar .container {
+        flex-direction: column !important;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .main-navbar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        gap: 15px;
+    }
+
+    .main-navbar ul li {
+        list-style: none;
+    }
+}
+
+/* Ajuste de las Tarjetas (Carta, Inicio y Nosotros) */
+@media (max-width: 576px) {
+    /* Forzamos a que el grid sea de una sola columna */
+    .grid-container, 
+    .contenedor-servicios {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .custom-card {
+        padding: 30px 20px;
+    }
+
+    /* Ajuste de títulos para que no se corten */
+    h1, .brand-logo {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* MODO HORIZONTAL */
+/* Evita que el contenido se solape o se pierda con poca altura */
+@media (max-height: 500px) and (orientation: landscape) {
+    .main-header {
+        position: static; /* Evita que el menú tape contenido al hacer scroll */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr !important; /* Dos columnas en horizontal para aprovechar el ancho */
+    }
+
+    .custom-card {
+        padding: 20px;
+    }
+
+    
+    .inicio {
+        padding: 40px 0;
+        min-height: auto;
+    }
+}
+
+/* Ajuste específico para el formulario de contacto */
+@media (max-width: 768px) {
+    .row > article {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }

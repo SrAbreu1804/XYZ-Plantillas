@@ -1,0 +1,218 @@
+/* --- 1. VARIABLES GLOBALES --- */
+:root {
+    --color-primario: #5d7a5c;    /* Verde Bosque/Rural */
+    --color-secundario: #a38d6d;  /* Tono Tierra/Madera */
+    --color-acento: #f4f1ea;      /* Crema suave para fondos */
+    --blanco: #ffffff;
+    --texto-oscuro: #2d3436;
+    --texto-suave: #636e72;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* --- 2. ESTILOS BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    background-color: var(--blanco);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 3. ENCABEZADO Y NAVEGACIÓN --- */
+.Hotel {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--blanco);
+}
+
+.Hotel h1 {
+    font-size: clamp(2rem, 8vw, 4rem);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    gap: 30px;
+    flex-wrap: wrap; /* Importante para móviles */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: var(--transicion);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--color-primario);
+}
+
+/* --- 4. SECCIONES (Inicio y Nosotros) --- */
+.inicio, .cabecera-nosotros, .cabecera-servicios, .cabecera-contacto {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--color-acento);
+}
+
+.titulo-principal {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: var(--color-primario);
+}
+
+/* --- 5. TARJETAS DE HABITACIONES (servicios.html) --- */
+.tarjeta-habitacion {
+    background: var(--blanco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-habitacion:hover {
+    transform: translateY(-10px);
+}
+
+.contenido-p {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.precio {
+    display: block;
+    font-weight: 800;
+    color: var(--color-primario);
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.btn-ver-mas, .btn-primary {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    transition: var(--transicion);
+}
+
+.btn-ver-mas:hover, .btn-primary:hover {
+    background-color: var(--color-secundario);
+}
+
+/* --- 6. FOOTER --- */
+footer {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    padding: 40px 20px;
+    margin-top: 80px;
+}
+
+.iconos-sociales {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.iconos-sociales a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    transition: var(--transicion);
+}
+
+.iconos-sociales a:hover {
+    color: var(--color-secundario);
+}
+
+/* --- 7. RESPONSIVE --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 2.2rem;
+    }
+    
+    nav ul {
+        gap: 15px;
+    }
+}
+
+/* Móviles (Ajuste crítico de botones y menú) */
+@media (max-width: 576px) {
+    nav ul {
+        flex-direction: column; /* Menú en lista vertical */
+        align-items: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .inicio, .cabecera-nosotros {
+        padding: 60px 15px;
+    }
+
+    .tarjeta-habitacion {
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste para que los botones de reserva sean cómodos de pulsar */
+    .btn-ver-mas, .btn-primary {
+        width: 100%;
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Pantallas de 300px */
+@media (max-width: 350px) {
+    .Hotel h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
