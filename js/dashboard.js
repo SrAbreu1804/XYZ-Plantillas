@@ -9,7 +9,7 @@ const myProjects = [
 
     { 
         name: "Gimnasio", 
-        icon: "bi bi-activity", 
+        icon: "bi bi-lightning-charge", 
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Gimnasio/index.html" 
     },
@@ -47,6 +47,13 @@ const myProjects = [
         icon: "bi bi-heart-pulse",
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Salud/Veteninaria/index.html"
+    },
+
+    {
+        name: "Peluquería",
+        icon: "bi bi-scissors",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Estética/Peluquería/index.html"
     }
 ];  
 

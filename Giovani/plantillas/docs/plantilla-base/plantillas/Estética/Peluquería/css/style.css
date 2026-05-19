@@ -1,0 +1,278 @@
+/* --- VARIABLES GLOBALES (StudioGlow) --- */
+:root {
+    --const-primario: #212529;    /* Gris Grafito Elegante / Premium */
+    --const-acento: #d4af37;      /* Oro Dorado Mate */
+    --const-fondo: #faf8f5;       /* Blanco Hueso / Crema Suave */
+    --blanco: #ffffff;
+    --texto-cuerpo: #495057;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* --- ESTILOS BASE --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--const-fondo);
+    font-family: 'Garamond', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-cuerpo);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- HEADER Y NAVEGACIÓN --- */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--const-primario);
+    padding: 35px 20px 20px 20px;
+    border-bottom: 3px solid var(--const-acento);
+}
+
+.logo-link { 
+    text-decoration: none !important; 
+    color: inherit; 
+    text-align: center; 
+}
+
+header h1 { 
+    color: var(--blanco); 
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 5px; 
+    margin: 0; 
+}
+
+header h1 span { 
+    color: var(--const-acento);
+    font-weight: 700;
+}
+
+header p { 
+    color: var(--blanco); 
+    opacity: 0.65; 
+    font-size: 0.8rem; 
+    letter-spacing: 3px;
+    margin: 6px 0 0 0; 
+}
+
+nav {
+    width: 100%;
+    margin-top: 25px;
+}
+
+nav ul { 
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none; 
+    gap: 30px; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.nav-link { 
+    color: var(--blanco) !important; 
+    text-decoration: none; 
+    font-weight: 500; 
+    text-transform: uppercase; 
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-bottom 0.3s ease; 
+}
+
+.nav-link:hover, .nav-link.active { 
+    color: var(--const-acento) !important; 
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--const-acento);
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+main {
+    flex: 1;
+    padding-bottom: 40px;
+}
+
+/* --- REJILLA RESPONSIVE Y ARTICLES (TARJETAS IGUALADAS) --- */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-4, .col-md-6, .col-lg-4, .col-12, .col-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    background: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 4px; /* Bordes más rectos para estética minimalista */
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    margin-bottom: 24px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12);
+}
+
+/* Iconos globales elegantes */
+article i { 
+    font-size: 2.5rem; 
+    color: var(--const-acento); 
+    margin-bottom: 20px; 
+    display: inline-block;
+}
+
+article h2, article h3, article h4 {
+    color: var(--const-primario);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+article p {
+    margin-bottom: 0;
+    color: var(--texto-cuerpo);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* --- CLASES DE RESETEO PARA CONTENEDORES LIGEROS --- */
+.seccion-presentacion, .seccion-cabecera-servicios {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: none !important;
+}
+.seccion-presentacion:hover, .seccion-cabecera-servicios:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.cta-contacto-bloque {
+    background-color: #f1ede7 !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+}
+
+/* --- SECCIÓN HERO (CONTRALUZ Y ALTA VISIBILIDAD) --- */
+.hero-peluqueria {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000') center/cover;
+    min-height: 55vh;
+}
+
+.hero-article {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: none !important;
+}
+.hero-article:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.hero-subtitle {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+    font-weight: 400 !important;
+    letter-spacing: 0.5px;
+}
+
+/* --- TEXTOS AUXILIARES Y BOTONES DE ACCIÓN --- */
+.text-muted-custom { color: #6c757d; }
+.max-width-600 { max-width: 600px; }
+.max-width-800 { max-width: 800px; }
+
+.btn-warning {
+    background-color: var(--const-acento) !important;
+    border-color: var(--const-acento) !important;
+    color: var(--const-primario) !important;
+    font-weight: 600 !important;
+    border-radius: 2px !important;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.btn-warning:hover {
+    background-color: #b8901c !important;
+    border-color: #b8901c !important;
+    color: var(--blanco) !important;
+}
+
+.btn-outline-light {
+    border-radius: 2px !important;
+    letter-spacing: 1px;
+}
+
+/* --- FORMULARIOS --- */
+.form-label { 
+    color: var(--const-primario); 
+    letter-spacing: 0.5px;
+}
+.form-control, .form-select {
+    padding: 12px 15px;
+    border: 1px solid #dcd1c4;
+    border-radius: 2px;
+    background-color: #fff;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--const-acento);
+    box-shadow: 0 0 0 0.25rem rgba(214, 175, 55, 0.15);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--const-primario);
+    color: var(--blanco);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 3px solid var(--const-acento);
+    margin-top: auto;
+}
+
+footer p { 
+    margin-bottom: 20px; 
+    font-size: 0.9rem; 
+    opacity: 0.75;
+    letter-spacing: 1px;
+}
+
+.iconos-sociales a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+.iconos-sociales a:hover {
+    color: var(--const-acento);
+    transform: translateY(-3px);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.9rem; letter-spacing: 3px; }
+    nav ul { flex-direction: column; align-items: center; gap: 12px; }
+    .nav-link { font-size: 0.9rem; }
+    article { padding: 30px 20px; }
+    .hero-peluqueria { min-height: 45vh; }
+}
