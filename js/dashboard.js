@@ -46,7 +46,7 @@ const myProjects = [
         name: "Veterinaria",
         icon: "bi bi-heart-pulse",
         color: "text-success",
-        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Salud/Veteninaria/index.html"
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Salud/Veterinaria/index.html"
     },
 
     {
