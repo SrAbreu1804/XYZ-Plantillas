@@ -9,7 +9,7 @@ const myProjects = [
         name: "Gimnasio", 
         icon: "bi bi-lightning-charge", 
         color: "text-success",
-        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Gimnasio/index.html" 
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Deporte/Gimnasio/index.html" 
     },
     { 
         name: "Hotel", 
@@ -46,6 +46,12 @@ const myProjects = [
         icon: "bi bi-scissors",
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Estética/Peluquería/index.html"
+    },
+    {
+        name: "Coach Deportivo",
+        icon: "bi bi-lightning-charge",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Deporte/Coach/index.html"
     }
 ];  
 

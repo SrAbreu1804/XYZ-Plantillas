@@ -1,0 +1,169 @@
+/* ==========================================================================
+   VARIABLES DE COLOR (Identidad de Coach - Profesional y Motivacional)
+   ========================================================================== */
+:root {
+    --const-primario: #0f172a;    /* Azul Slate muy profundo (reemplaza al negro base) */
+    --const-acento: #f59e0b;      /* Ámbar / Dorado Motivacional (para el span y hovers) */
+    --const-fondo: #ffffff;       /* Fondo de las tarjetas */
+    --bg-gris-claro: #f8fafc;     /* Fondo sutil .bg-light de Bootstrap */
+    --blanco: #ffffff;
+    --texto-cuerpo: #334155;      /* Gris slate suave para textos largos */
+    --sombra: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- ESTILOS GENERALES Y RESET --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-cuerpo);
+    background-color: var(--bg-gris-claro);
+}
+
+/* --- LOGO Y NAVBAR (Heredado de tu estructura) --- */
+.navbar-dark .navbar-brand {
+    color: var(--blanco) !important;
+    letter-spacing: 2px;
+}
+
+/* El toque dorado característico del Coach */
+.navbar-brand span {
+    color: var(--const-acento);
+    margin-left: 2px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: var(--const-acento) !important;
+}
+
+/* --- CONTENEDOR DE SERVICIOS (Flexbox clónico al gimnasio) --- */
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* --- MAQUETACIÓN DE LAS TARJETAS (.card-gym) --- */
+.card-gym {
+    background: var(--blanco);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto dinámico al pasar el cursor */
+.card-gym:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Iconos circulares o destacados */
+.card-gym__icon {
+    margin-bottom: 20px;
+}
+
+.card-gym__icon i {
+    font-size: 2.8rem;
+    color: var(--const-acento); /* Iconos dorados en lugar de azules/verdes */
+    display: inline-block;
+}
+
+/* Títulos de las tarjetas */
+.card-gym__title {
+    color: var(--const-primario);
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+/* Textos informativos de las tarjetas */
+.card-gym__text.texto-suave {
+    color: var(--texto-cuerpo);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* --- BOTONES PERSONALIZADOS --- */
+.btn-primary {
+    background-color: var(--const-primario) !important;
+    border-color: var(--const-primario) !important;
+    color: var(--blanco) !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--const-acento) !important; /* El botón transmuta a dorado en hover */
+    border-color: var(--const-acento) !important;
+    color: var(--const-primario) !important; /* Texto oscuro para contrastar con el dorado */
+}
+
+/* --- ELEMENTOS DE FORMULARIO (Sección Contacto) --- */
+.form-label {
+    color: var(--const-primario);
+    letter-spacing: 0.5px;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    border-color: var(--const-acento) !important;
+    box-shadow: 0 0 0 0.25rem rgba(245, 158, 11, 0.15) !important;
+}
+
+/* --- ESTILOS DE PRESENTACIÓN (.seccion-presentacion) --- */
+.seccion-presentacion h2 {
+    color: var(--const-primario);
+}
+
+.max-width-800 {
+    max-width: 800px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--const-primario) !important;
+    color: var(--blanco);
+    padding: 35px 0;
+    margin-top: 50px;
+    border-top: 3px solid var(--const-acento);
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.iconos-sociales a {
+    color: var(--blanco);
+    font-size: 1.3rem;
+    margin: 0 10px;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.iconos-sociales a:hover {
+    color: var(--const-acento);
+    transform: scale(1.1);
+}
