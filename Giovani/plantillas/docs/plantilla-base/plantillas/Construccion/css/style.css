@@ -1,128 +1,273 @@
-/*VARIABLES GLOBALES*/
+/* --- 1. CONFIGURACIÓN Y VARIABLES GLOBALES --- */
 :root {
-    --const-primario: #2b2d42;
-    --const-acento: #f3722c;
-    --const-fondo: #edf2f4;
-    --blanco: #ffffff;
-    --texto-cuerpo: #4a4e69;
-    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Paleta de Colores de Identidad */
+    --colegio-principal: #1a365d; /* Azul Institucional */
+    --colegio-acento: #d4af37;    /* Dorado de Acento */
+    --blanco: #ffffff;             /* Color Puro */
+    --gris-fondo: #f8fafc;        /* Fondo base claro para contraste */
+    --texto-suave: #5a677a;       /* Color legible para descripciones y párrafos */
+    
+    /* Efectos Globales */
+    --sombra-suave: 0 10px 25px rgba(0, 0, 0, 0.05);
+    --sombra-hover: 0 20px 40px rgba(26, 54, 93, 0.12);
+    --transicion-base: all 0.3s ease;
+    --transicion-card: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/*ESTILOS BASE*/
-body {
-    background-color: var(--const-fondo);
-    font-family: 'Roboto', sans-serif;
-    color: var(--texto-cuerpo);
+/* --- 2. RESETS Y ESTILOS BASE --- */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la pantalla */
+    box-sizing: border-box;
 }
 
-/*HEADER*/
-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000');
+body {
+    background-color: var(--gris-fondo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Títulos de sección globales con subrayado decorativo */
+h2.text-center {
+    color: var(--colegio-principal);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2.text-center::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--colegio-acento);
+}
+
+/* Estructura general del contenedor principal */
+main {
+    padding: 60px 0 80px 0;
+}
+
+/* --- 3. COMPONENTE: ENCABEZADO (HEADER HERO) --- */
+.header-main {
+    background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), 
+                url('https://images.unsplash.com/photo-1523050853063-bd8012fec046?q=80&w=2000');
     background-size: cover;
     background-position: center;
-    padding: 40px 20px;
-    border-bottom: 5px solid var(--const-acento);
+    padding-bottom: 60px;
 }
 
-.logo-link { text-decoration: none !important; color: inherit; text-align: center; }
-header h1 { color: var(--blanco); text-transform: uppercase; letter-spacing: 2px; margin: 0; }
-header h1 span { color: var(--const-acento); }
-header p { color: var(--blanco); opacity: 0.8; font-size: 0.8rem; margin: 5px 0 0 0; }
-
-nav ul { display: flex; list-style: none; gap: 20px; padding: 20px 0 0 0; margin: 0; }
-.nav-link { color: var(--blanco) !important; text-decoration: none; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
-.nav-link:hover, .nav-link.active { color: var(--const-acento) !important; }
-
-/*CONTENIDO PRINCIPAL*/
-main {
-    flex: 1; /* Esto empuja el footer al final de la página */
-    padding: 60px 0;
+/* --- 4. COMPONENTE: BARRA DE NAVEGACIÓN (NAVBAR) --- */
+.navbar-colegio {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ---TARJETAS--- */
-.row {
-    display: flex;
-    flex-wrap: wrap;
+/* Estilo del Logo Institucional */
+.logo-colegio {
+    color: var(--blanco) !important;
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
 }
 
-.col-md-4, .col-md-6, .col-lg-4 {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px; /* Espacio vertical entre filas */
+.logo-colegio::first-letter {
+    color: var(--colegio-acento);
+    font-size: 2.2rem;
 }
 
-article {
+/* Enlaces del Menú de Navegación */
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    transition: var(--transicion-base);
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--colegio-acento) !important;
+}
+
+.nav-link.active {
+    color: var(--colegio-acento) !important;
+    position: relative;
+}
+
+/* Indicador inferior (línea dorada) para la página activa */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--colegio-acento);
+    border-radius: 2px;
+}
+
+/* --- 5. COMPONENTE: CONTENEDOR GRID Y TARJETAS (CARDS) --- */
+.contenedor-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Estructura de Tarjetas */
+.card-colegio {
     background: var(--blanco);
-    padding: 35px;
-    border-radius: 8px;
-    box-shadow: var(--sombra);
-    
-    flex-grow: 1; 
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transicion-card);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+/* Línea decorativa superior en las tarjetas */
+.card-colegio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--colegio-acento);
 }
 
-article i { 
-    font-size: 3rem; 
-    color: var(--const-acento); 
-    margin-bottom: 20px; 
+/* Efecto de elevación al pasar el cursor */
+.card-colegio:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--sombra-hover);
 }
 
-article h3, article h2 {
-    color: var(--const-primario);
+/* Elementos internos de las Tarjetas */
+.card-icon {
+    font-size: 3rem;
+    color: var(--colegio-principal) !important;
+    margin-bottom: 20px;
+}
+
+.card-colegio h3 {
+    color: var(--colegio-principal);
     font-weight: 800;
     margin-bottom: 15px;
 }
 
-/* --- FOOTER --- */
-footer {
-    background-color: var(--const-primario);
-    color: var(--blanco);
-    padding: 40px 0;
-    text-align: center;
-    margin-top: auto; /* Ancla el footer al final */
+.texto-suave {
+    color: var(--texto-suave);
+    flex-grow: 1;
+    margin-bottom: 20px;
 }
 
-.iconos-sociales a {
-    color: var(--blanco);
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: 0.3s;
+/* --- 6. COMPONENTE: BOTONES --- */
+.btn-primary {
+    background-color: var(--colegio-principal) !important;
+    border: none !important;
+    padding: 12px 25px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    transition: var(--transicion-base) !important;
 }
 
-.iconos-sociales a:hover {
-    color: var(--const-acento);
+.btn-primary:hover {
+    background-color: var(--colegio-acento) !important;
+    color: var(--colegio-principal) !important;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.6rem;
+/* --- 7. BLOQUE RESPONSIVE (MEDIA QUERIES) --- */
+
+/* Ajuste para Tablets y Escritorios Pequeños (Debajo de 991px) */
+@media (max-width: 991px) {
+    .header-main {
+        padding-bottom: 30px !important;
+        background-attachment: scroll; /* Mejora drástica del rendimiento en scrolls móviles */
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
+    .navbar-collapse {
+        display: block !important;  /* Mantiene el menú visible en ausencia de un botón toggler dinámico */
+        width: 100%;
+    }
+
+    .navbar-colegio .container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .logo-colegio {
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    /* Transformación del menú a un listado vertical limpio en móviles */
+    .navbar-nav {
+        flex-direction: column !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        margin: 0 !important;
+        padding: 12px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: block;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link.active {
+        background: rgba(212, 175, 55, 0.1); /* Resaltado dorado translúcido de fondo */
+        color: var(--colegio-acento) !important;
+    }
+
+    .nav-link.active::after {
+        display: none; /* Evitamos que la barra rígida flote descolocada en el layout móvil */
+    }
+
+    /* Redimensionamiento adaptativo del grid a una sola columna */
+    .contenedor-servicios {
+        grid-template-columns: 1fr !important;
+        padding: 0 20px;
+    }
+
+    h2.text-center {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Ajustes finos para teléfonos inteligentes pequeños (Debajo de 576px) */
+@media (max-width: 576px) {
+    .header-main {
+        padding-top: 20px !important;
     }
     
-    .nav-link {
-        font-size: 1.1rem;
+    .logo-colegio {
+        font-size: 1.5rem !important;
     }
 }

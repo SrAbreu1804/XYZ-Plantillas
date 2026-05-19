@@ -1,14 +1,19 @@
-/* --- VARIABLES GLOBALES (StudioGlow) --- */
+/* --- 1. CONFIGURACIÓN Y VARIABLES GLOBALES --- */
 :root {
-    --const-primario: #212529;    /* Gris Grafito Elegante / Premium */
+    /* Paleta de Colores de Identidad */
+    --const-primario: #212529;    /* Gris Grafito Elegante */
     --const-acento: #d4af37;      /* Oro Dorado Mate */
     --const-fondo: #faf8f5;       /* Blanco Hueso / Crema Suave */
-    --blanco: #ffffff;
-    --texto-cuerpo: #495057;
+    --blanco: #ffffff;             /* Blanco Puro */
+    --texto-cuerpo: #495057;      /* Gris Legible para Párrafos */
+    
+    /* Efectos Globales */
     --sombra: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --transicion-base: all 0.3s ease;
+    --transicion-card: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* --- ESTILOS BASE --- */
+/* --- 2. RESETS Y ESTILOS BASE --- */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -24,7 +29,13 @@ body {
     min-height: 100vh;
 }
 
-/* --- HEADER Y NAVEGACIÓN --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 3. HEADER & NAV --- */
 header {
     display: flex;
     flex-direction: column;
@@ -35,17 +46,17 @@ header {
 }
 
 .logo-link { 
-    text-decoration: none !important; 
-    color: inherit; 
-    text-align: center; 
+    text-decoration: none !important;
+    color: inherit;
+    text-align: center;
 }
 
 header h1 { 
-    color: var(--blanco); 
+    color: var(--blanco);
     font-size: 2.4rem;
     font-weight: 300;
-    letter-spacing: 5px; 
-    margin: 0; 
+    letter-spacing: 5px;
+    margin: 0;
 }
 
 header h1 span { 
@@ -54,11 +65,11 @@ header h1 span {
 }
 
 header p { 
-    color: var(--blanco); 
-    opacity: 0.65; 
-    font-size: 0.8rem; 
+    color: var(--blanco);
+    opacity: 0.65;
+    font-size: 0.8rem;
     letter-spacing: 3px;
-    margin: 6px 0 0 0; 
+    margin: 6px 0 0 0;
 }
 
 nav {
@@ -67,41 +78,42 @@ nav {
 }
 
 nav ul { 
-    display: flex; 
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    list-style: none; 
-    gap: 30px; 
-    padding: 0; 
-    margin: 0; 
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-link { 
-    color: var(--blanco) !important; 
-    text-decoration: none; 
-    font-weight: 500; 
-    text-transform: uppercase; 
+    color: var(--blanco) !important;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 1px;
     padding-bottom: 5px;
-    transition: color 0.3s ease, border-bottom 0.3s ease; 
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.nav-link:hover, .nav-link.active { 
-    color: var(--const-acento) !important; 
+.nav-link:hover, 
+.nav-link.active { 
+    color: var(--const-acento) !important;
 }
 
 .nav-link.active {
     border-bottom: 2px solid var(--const-acento);
 }
 
-/* --- CONTENIDO PRINCIPAL --- */
+/* --- 4. ESTRUCTURA DE CONTENIDO PRINCIPAL --- */
 main {
     flex: 1;
     padding-bottom: 40px;
 }
 
-/* --- REJILLA RESPONSIVE Y ARTICLES (TARJETAS IGUALADAS) --- */
+/* Rejilla y Contenedores Adaptativos Flexbox */
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -112,21 +124,22 @@ main {
     flex-direction: column;
 }
 
+/* --- 5. COMPONENTE: TARJETAS DE SERVICIOS (ARTICLES) --- */
 article {
     background: var(--blanco);
     padding: 40px 30px;
-    border-radius: 4px; /* Bordes más rectos para estética minimalista */
+    border-radius: 4px; /* Bordes sutiles para estética editorial minimalista */
     box-shadow: var(--sombra);
     border: 1px solid rgba(212, 175, 55, 0.1);
     
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     
     margin-bottom: 24px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: var(--transicion-card);
 }
 
 article:hover {
@@ -134,11 +147,11 @@ article:hover {
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12);
 }
 
-/* Iconos globales elegantes */
+/* Iconos de Servicios */
 article i { 
-    font-size: 2.5rem; 
-    color: var(--const-acento); 
-    margin-bottom: 20px; 
+    font-size: 2.5rem;
+    color: var(--const-acento);
+    margin-bottom: 20px;
     display: inline-block;
 }
 
@@ -157,14 +170,17 @@ article p {
     line-height: 1.7;
 }
 
-/* --- CLASES DE RESETEO PARA CONTENEDORES LIGEROS --- */
-.seccion-presentacion, .seccion-cabecera-servicios {
+/* Modificadores y Reseteos de Cajas específicas */
+.seccion-presentacion, 
+.seccion-cabecera-servicios {
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
     transform: none !important;
 }
-.seccion-presentacion:hover, .seccion-cabecera-servicios:hover {
+
+.seccion-presentacion:hover, 
+.seccion-cabecera-servicios:hover {
     transform: none !important;
     box-shadow: none !important;
 }
@@ -174,7 +190,7 @@ article p {
     border: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
-/* --- SECCIÓN HERO (CONTRALUZ Y ALTA VISIBILIDAD) --- */
+/* --- 6. COMPONENTE: HERO SECTION (BANNER PRINCIPAL) --- */
 .hero-peluqueria {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=2000') center/cover;
@@ -187,6 +203,7 @@ article p {
     border: none !important;
     transform: none !important;
 }
+
 .hero-article:hover {
     transform: none !important;
     box-shadow: none !important;
@@ -198,7 +215,7 @@ article p {
     letter-spacing: 0.5px;
 }
 
-/* --- TEXTOS AUXILIARES Y BOTONES DE ACCIÓN --- */
+/* --- 7. COMPONENTE: BOTONES Y CLASES AUXILIARES --- */
 .text-muted-custom { color: #6c757d; }
 .max-width-600 { max-width: 600px; }
 .max-width-800 { max-width: 800px; }
@@ -210,8 +227,9 @@ article p {
     font-weight: 600 !important;
     border-radius: 2px !important;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    transition: var(--transicion-base);
 }
+
 .btn-warning:hover {
     background-color: #b8901c !important;
     border-color: #b8901c !important;
@@ -223,23 +241,27 @@ article p {
     letter-spacing: 1px;
 }
 
-/* --- FORMULARIOS --- */
+/* --- 8. COMPONENTE: FORMULARIOS --- */
 .form-label { 
-    color: var(--const-primario); 
+    color: var(--const-primario);
     letter-spacing: 0.5px;
 }
-.form-control, .form-select {
+
+.form-control, 
+.form-select {
     padding: 12px 15px;
     border: 1px solid #dcd1c4;
     border-radius: 2px;
     background-color: #fff;
 }
-.form-control:focus, .form-select:focus {
+
+.form-control:focus, 
+.form-select:focus {
     border-color: var(--const-acento);
     box-shadow: 0 0 0 0.25rem rgba(214, 175, 55, 0.15);
 }
 
-/* --- FOOTER --- */
+/* --- 9. PIE DE PÁGINA (FOOTER) --- */
 footer {
     background-color: var(--const-primario);
     color: var(--blanco);
@@ -250,8 +272,8 @@ footer {
 }
 
 footer p { 
-    margin-bottom: 20px; 
-    font-size: 0.9rem; 
+    margin-bottom: 20px;
+    font-size: 0.9rem;
     opacity: 0.75;
     letter-spacing: 1px;
 }
@@ -263,16 +285,34 @@ footer p {
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
 }
+
 .iconos-sociales a:hover {
     color: var(--const-acento);
     transform: translateY(-3px);
 }
 
-/* --- MEDIA QUERIES --- */
+/* --- 10. DISEÑO RESPONSIVO (MEDIA QUERIES) --- */
 @media (max-width: 768px) {
-    header h1 { font-size: 1.9rem; letter-spacing: 3px; }
-    nav ul { flex-direction: column; align-items: center; gap: 12px; }
-    .nav-link { font-size: 0.9rem; }
-    article { padding: 30px 20px; }
-    .hero-peluqueria { min-height: 45vh; }
+    header h1 { 
+        font-size: 1.9rem;
+        letter-spacing: 3px;
+    }
+    
+    nav ul { 
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .nav-link { 
+        font-size: 0.9rem;
+    }
+    
+    article { 
+        padding: 30px 20px;
+    }
+    
+    .hero-peluqueria { 
+        min-height: 45vh;
+    }
 }

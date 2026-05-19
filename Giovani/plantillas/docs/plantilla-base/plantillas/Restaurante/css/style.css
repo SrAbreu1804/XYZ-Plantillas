@@ -1,202 +1,365 @@
-/* ===================================================
-   1. VARIABLES Y ESTRUCTURA GLOBAL
-   =================================================== */
+/* --- 1. CONFIGURACIÓN Y VARIABLES GLOBALES --- */
 :root {
-    --dorado: #d4af37;
-    --negro-fondo: #0a0a0a;
-    --blanco-hueso: #f8f5f0;
-    --texto-oscuro: #1a1a1a;
-    --texto-suave: #666666;
+    /* Paleta de Colores Sanitaria / Bienestar */
+    --color-primario: #00a8cc;    /* Azul Turquesa Fisio */
+    --color-secundario: #007fa3;  /* Azul oscuro para interacciones y hovers */
+    --color-acento: #e1f5fe;      /* Azul cielo muy suave para fondos */
+    --blanco: #ffffff;            /* Blanco Puro */
+    --gris-claro: #f8f9fa;        /* Gris neutro para cajas y formularios */
+    
+    /* Tipografías y Contraste de Lectura */
+    --texto-oscuro: #2c3e50;      /* Azul pizarra para títulos y máxima legibilidad */
+    --texto-suave: #7f8c8d;       /* Gris ceniza para descripciones secundarias */
+    
+    /* Efectos Globales */
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
 }
 
-html, body { height: 100%; }
-
+/* --- 2. RESETS Y ESTILOS BASE --- */
 body {
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+    background-color: var(--blanco);
     margin: 0;
-    background-color: #ffffff;
+    overflow-x: hidden; /* Evita desbordamiento y scroll horizontal en móviles */
 }
 
-main { flex: 1 0 auto; }
-
-/* Esta regla obliga al navegador a usar la fuente de Bootstrap para los iconos */
-.card-icon-wrapper i, .card-icon i, .iconos-sociales i {
-    display: inline-block !important;
-    font-family: "bootstrap-icons" !important; /* Indica que use la librería del link */
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    line-height: 1 !important;
-    color: var(--dorado) !important; /* Color oro de tu imagen */
-    font-size: 3.5rem !important;    /* Tamaño grande */
-    margin-bottom: 15px;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* Iconos más pequeños para el footer */
-.iconos-sociales i { font-size: 1.5rem !important; }
-
-/* ===================================================
-   3. Header
-   =================================================== */
-.main-header {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-    url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2000');
-    background-size: cover;
-    background-position: center;
-    padding: 10px 0 40px 0;
-    border-bottom: 2px solid var(--dorado);
-}
-
-.brand-logo {
-    color: var(--blanco-hueso) !important;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+h1, h2, h3 {
     font-weight: 700;
+    color: var(--texto-oscuro);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.seccion-pagina {
+    padding: 80px 0;
+}
+
+/* Estructura del contenedor base para centrado de rejillas Bootstrap/Custom */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* --- 3. COMPONENTE: BARRA DE NAVEGACIÓN (NAVBAR) --- */
+.navbar-clinica {
+    background: var(--blanco);
+    box-shadow: var(--sombra);
+    padding: 15px 0;
+}
+
+.navbar-clinica .container {
+    display: flex;
+    justify-content: space-between; /* Separa el logo a la izquierda y enlaces a la derecha */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-clinica {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--texto-oscuro) !important;
+    text-transform: uppercase;
     text-decoration: none;
 }
 
-.main-navbar ul {
-    list-style: none;
+.logo-clinica span {
+    color: var(--color-primario);
+}
+
+.nav-links-lista {
     display: flex;
-    gap: 25px;
+    list-style: none;
     margin: 0;
+    padding: 0;
+    gap: 20px;
 }
 
 .nav-link {
-    color: rgba(248, 245, 240, 0.8) !important;
+    font-weight: 500;
+    color: var(--texto-oscuro) !important;
     text-decoration: none;
-    text-transform: uppercase;
+    transition: var(--transicion);
+    margin-left: 20px; /* Separación sutil entre ítems */
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--color-primario) !important;
+}
+
+/* --- 4. SECCIÓN DESTACADA (HERO SECTION) --- */
+.hero-clinica {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.hero-clinica__title {
+    font-size: clamp(1.8rem, 8vw, 3.5rem); /* Escalado tipográfico fluido */
+    margin-bottom: 20px;
+}
+
+.hero-clinica__text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-clinica__actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- 5. COMPONENTE: BOTONES --- */
+.btn-clinica {
+    padding: 12px 30px;
+    border-radius: 50px; /* Acabado en cápsula */
+    text-decoration: none;
     font-weight: 600;
+    display: inline-block;
+    text-align: center;
+    min-width: 180px;
+    transition: var(--transicion);
 }
 
-.nav-link.active { color: var(--dorado) !important; }
+.btn-clinica--primary {
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    border: 2px solid var(--color-primario);
+}
 
-/* ===================================================
-   4. TARJETAS
-   =================================================== */
-.grid-container, .contenedor-servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.btn-clinica--primary:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+    transform: translateY(-2px);
+}
+
+.btn-clinica--outline {
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+}
+
+.btn-clinica--outline:hover {
+    background-color: var(--blanco);
+    color: var(--color-primario);
+}
+
+/* --- 6. COMPONENTE: REJILLA Y TARJETAS DE SERVICIOS (CARDS) --- */
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.custom-card{
-    background: #fff;
-    padding: 40px 30px;
-    border-top: 4px solid var(--dorado);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+/* Tarjeta de Servicio con Imagen Superior */
+.servicio-card {
+    background: var(--blanco);
+    border-radius: 15px;
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 380px;
+    transition: var(--transicion);
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+}
+
+.servicio-card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.servicio-card__content {
+    padding: 25px;
     text-align: center;
     display: flex;
     flex-direction: column;
     height: 100%;
+    justify-content: space-between;
 }
 
-.text-muted-custom, .texto-suave {
+.servicio-card__text {
     color: var(--texto-suave);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
 }
 
-/* Botones alineados */
-.custom-card .btn, .btn {
-    margin-top: auto;
-    background-color: transparent !important;
-    color: var(--texto-oscuro) !important;
-    border: 2px solid var(--texto-oscuro) !important;
-    border-radius: 0 !important;
-    font-weight: 700;
-}
-
-.custom-card .btn:hover, .btn:hover {
-    background-color: var(--texto-oscuro) !important;
-    color: var(--dorado) !important;
-}
-
-/* ===================================================
-   5. Footer
-   =================================================== */
-footer {
-    background-color: var(--negro-fondo);
-    color: var(--blanco-hueso);
-    padding: 40px 0;
-    border-top: 3px solid var(--dorado);
+/* Tarjeta de Servicio Iconográfica (Alternativa) */
+.card-tratamiento {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
+    box-shadow: var(--sombra);
+    height: 100%;
+    border-bottom: 4px solid transparent;
+    transition: var(--transicion);
 }
 
-/* ===================================================
-   8. RESPONSIVE
-   =================================================== */
+.card-tratamiento:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-primario);
+}
 
-/* Ajuste del Menú de Navegación */
+.card-tratamiento__icon {
+    font-size: 3rem;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+}
+
+/* --- 7. COMPONENTE: FORMULARIO DE RESERVAS & CONTACTO --- */
+.formulario-box {
+    background: var(--gris-claro);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.input-clinica {
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.input-clinica:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 0.2rem rgba(0, 168, 204, 0.25);
+    outline: none;
+}
+
+.btn-enviar {
+    background-color: var(--texto-oscuro);
+    color: var(--blanco);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: var(--transicion);
+}
+
+.btn-enviar:hover {
+    background-color: var(--color-primario);
+}
+
+.mapa-wrapper {
+    margin-top: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+    background: #eee;
+}
+
+/* --- 8. DISEÑO RESPONSIVO (MEDIA QUERIES) --- */
+
+/* Ajustes adaptativos para Tablets y Pantallas Medianas (max-width: 768px) */
 @media (max-width: 768px) {
-    .main-navbar .container {
-        flex-direction: column !important;
+    .navbar-clinica .container {
+        flex-direction: column;
         gap: 15px;
-        text-align: center;
     }
 
-    .main-navbar ul {
-        display: flex;
+    .nav-links-lista {
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    .hero-clinica {
+        padding: 60px 0;
+    }
+}
+
+/* Ajustes críticos para Dispositivos Móviles (max-width: 576px) */
+@media (max-width: 576px) {
+    .nav-links-lista {
         flex-wrap: wrap;
         justify-content: center;
-        padding: 0;
-        gap: 15px;
+        gap: 10px;
     }
 
-    .main-navbar ul li {
-        list-style: none;
-    }
-}
-
-/* Ajuste de las Tarjetas (Carta, Inicio y Nosotros) */
-@media (max-width: 576px) {
-    /* Forzamos a que el grid sea de una sola columna */
-    .grid-container, 
-    .contenedor-servicios {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
-        padding: 0 15px;
+    .nav-link {
+        font-size: 0.9rem;
+        margin-left: 0; /* Centrado correcto al colapsar */
     }
 
-    .custom-card {
-        padding: 30px 20px;
+    /* Modificador estructural de la botonera Hero */
+    .hero-clinica__actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
     }
 
-    /* Ajuste de títulos para que no se corten */
-    h1, .brand-logo {
-        font-size: 1.8rem !important;
-    }
-}
-
-/* MODO HORIZONTAL */
-/* Evita que el contenido se solape o se pierda con poca altura */
-@media (max-height: 500px) and (orientation: landscape) {
-    .main-header {
-        position: static; /* Evita que el menú tape contenido al hacer scroll */
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr 1fr !important; /* Dos columnas en horizontal para aprovechar el ancho */
-    }
-
-    .custom-card {
-        padding: 20px;
-    }
-
-    
-    .inicio {
-        padding: 40px 0;
-        min-height: auto;
-    }
-}
-
-/* Ajuste específico para el formulario de contacto */
-@media (max-width: 768px) {
-    .row > article {
+    .btn-clinica {
         width: 100%;
-        margin-bottom: 30px;
+        max-width: 280px;
+        margin-left: 0 !important;
+    }
+
+    .hero-clinica__text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+/* Corrección Óptima para Modo Horizontal (Landscape de Smartphones) */
+@media (max-height: 550px) and (orientation: landscape) {
+    .hero-clinica {
+        min-height: 100vh;
+        padding: 40px 0;
+    }
+
+    .hero-clinica__actions {
+        flex-direction: row !important;
+        gap: 10px;
+    }
+
+    .btn-clinica {
+        width: auto;
+        min-width: 150px;
+        padding: 10px 20px;
+    }
+}
+
+/* Soporte fino para pantallas extremadamente estrechas (max-width: 350px) */
+@media (max-width: 350px) {
+    .logo-clinica {
+        font-size: 1.2rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
     }
 }

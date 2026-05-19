@@ -1,16 +1,19 @@
-/* --- 1. VARIABLES GLOBALES --- */
+/* --- 1. CONFIGURACIÓN Y VARIABLES GLOBALES --- */
 :root {
+    /* Paleta de Colores de Identidad (Naturaleza / Calidez) */
     --color-primario: #5d7a5c;    /* Verde Bosque/Rural */
     --color-secundario: #a38d6d;  /* Tono Tierra/Madera */
     --color-acento: #f4f1ea;      /* Crema suave para fondos */
-    --blanco: #ffffff;
-    --texto-oscuro: #2d3436;
-    --texto-suave: #636e72;
+    --blanco: #ffffff;            /* Blanco Puro */
+    --texto-oscuro: #2d3436;      /* Color base para títulos y lectura principal */
+    --texto-suave: #636e72;       /* Gris atenuado para subtítulos y descripciones */
+    
+    /* Efectos y Animaciones */
     --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
     --transicion: all 0.3s ease;
 }
 
-/* --- 2. ESTILOS BASE --- */
+/* --- 2. RESETS Y ESTILOS BASE --- */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +34,7 @@ img {
     display: block;
 }
 
-/* --- 3. ENCABEZADO Y NAVEGACIÓN --- */
+/* --- 3. ENCABEZADO PRINCIPAL (HERO BANNER) --- */
 .Hotel {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                 url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200');
@@ -48,6 +51,7 @@ img {
     letter-spacing: 4px;
 }
 
+/* --- 4. COMPONETE: BARRA DE NAVEGACIÓN (NAVBAR) --- */
 nav {
     background: var(--blanco);
     box-shadow: var(--sombra);
@@ -63,7 +67,7 @@ nav ul {
     padding: 15px 0;
     margin: 0;
     gap: 30px;
-    flex-wrap: wrap; /* Importante para móviles */
+    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -75,12 +79,16 @@ nav ul {
     transition: var(--transicion);
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover, 
+.nav-link.active {
     color: var(--color-primario);
 }
 
-/* --- 4. SECCIONES (Inicio y Nosotros) --- */
-.inicio, .cabecera-nosotros, .cabecera-servicios, .cabecera-contacto {
+/* --- 5. CABECERAS DE SECCIÓN COMUNES --- */
+.inicio, 
+.cabecera-nosotros, 
+.cabecera-servicios, 
+.cabecera-contacto {
     padding: 80px 20px;
     text-align: center;
     background-color: var(--color-acento);
@@ -92,7 +100,7 @@ nav ul {
     color: var(--color-primario);
 }
 
-/* --- 5. TARJETAS DE HABITACIONES (servicios.html) --- */
+/* --- 6. COMPONENTE: TARJETAS DE HABITACIONES (CARDS) --- */
 .tarjeta-habitacion {
     background: var(--blanco);
     border-radius: 12px;
@@ -106,6 +114,13 @@ nav ul {
 
 .tarjeta-habitacion:hover {
     transform: translateY(-10px);
+}
+
+/* Control estricto del tamaño de imágenes para evitar distorsiones visuales */
+.tarjeta-habitacion img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
 }
 
 .contenido-p {
@@ -123,7 +138,9 @@ nav ul {
     font-size: 1.2rem;
 }
 
-.btn-ver-mas, .btn-primary {
+/* --- 7. COMPONENTE: BOTONES --- */
+.btn-ver-mas, 
+.btn-primary {
     display: inline-block;
     background-color: var(--color-primario);
     color: var(--blanco);
@@ -136,23 +153,18 @@ nav ul {
     transition: var(--transicion);
 }
 
-.btn-ver-mas:hover, .btn-primary:hover {
+.btn-ver-mas:hover, 
+.btn-primary:hover {
     background-color: var(--color-secundario);
 }
 
-.tarjeta-habitacion img {
-    width: 100%;
-    height: 240px;        /* Fuerza a todas las imágenes a medir exactamente lo mismo de alto */
-    object-fit: cover;    /* Recorta y centra la imagen para que no se deforme ni se estire */
-}
-
-
-/* --- 6. FOOTER --- */
+/* --- 8. PIE DE PÁGINA (FOOTER) --- */
 footer {
     background-color: var(--texto-oscuro);
     color: var(--blanco);
     padding: 40px 20px;
     margin-top: 80px;
+    text-align: center;
 }
 
 .iconos-sociales {
@@ -172,9 +184,9 @@ footer {
     color: var(--color-secundario);
 }
 
-/* --- 7. RESPONSIVE --- */
+/* --- 9. DISEÑO RESPONSIVO (MEDIA QUERIES) --- */
 
-/* Tablets */
+/* Ajustes adaptativos para Tablets (Debajo de 768px) */
 @media (max-width: 768px) {
     .titulo-principal {
         font-size: 2.2rem;
@@ -185,16 +197,17 @@ footer {
     }
 }
 
-/* Móviles (Ajuste crítico de botones y menú) */
+/* Ajustes críticos para Dispositivos Móviles (Debajo de 576px) */
 @media (max-width: 576px) {
     nav ul {
-        flex-direction: column; /* Menú en lista vertical */
+        flex-direction: column;
         align-items: center;
         gap: 10px;
         padding: 20px 0;
     }
 
-    .inicio, .cabecera-nosotros {
+    .inicio, 
+    .cabecera-nosotros {
         padding: 60px 15px;
     }
 
@@ -202,8 +215,9 @@ footer {
         margin-bottom: 20px;
     }
 
-    /* Ajuste para que los botones de reserva sean cómodos de pulsar */
-    .btn-ver-mas, .btn-primary {
+    /* Modificador de botones para un área táctil más cómoda */
+    .btn-ver-mas, 
+    .btn-primary {
         width: 100%;
         padding: 15px;
     }
@@ -213,7 +227,7 @@ footer {
     }
 }
 
-/* Pantallas de 300px */
+/* Ajustes finos para Smartphones extra pequeños (Debajo de 350px) */
 @media (max-width: 350px) {
     .Hotel h1 {
         font-size: 1.5rem;
