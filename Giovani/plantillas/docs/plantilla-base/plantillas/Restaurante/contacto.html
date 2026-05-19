@@ -49,35 +49,35 @@
 
             <div class="col-lg-8">
                 <article class="custom-card h-100">
-                    <form action="#" class="p-2">
+                    <form action="https://formsubmit.co/tuemail" method="POST" class="p-2">
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold">Nombre</label>
-                                <input type="text" class="form-control" placeholder="Su nombre completo">
+                                <input type="text" name="name" class="form-control" placeholder="Su nombre completo" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold">Email</label>
-                                <input type="email" class="form-control" placeholder="correo@ejemplo.com">
+                                <input type="email" name="email" class="form-control" placeholder="correo@ejemplo.com" required>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold">Fecha de Reserva</label>
-                                <input type="date" class="form-control">
+                                <input type="date" name="fecha_reserva" class="form-control" required>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label class="form-label fw-bold">Comensales</label>
-                                <select class="form-select">
-                                    <option>1-2 Persona</option>
-                                    <option>2-4 Personas</option>
-                                    <option>4-8 Personas</option>
-                                    <option>8+ Personas</option>
+                                <select name="comensales" class="form-select">
+                                    <option value="1-2_personas">1-2 Personas</option>
+                                    <option value="2-4_personas">2-4 Personas</option>
+                                    <option value="4-8_personas">4-8 Personas</option>
+                                    <option value="8+_personas">8+ Personas</option>
                                 </select>
                             </div>
                         </div>
                         <div class="mb-4">
                             <label class="form-label fw-bold">Observaciones</label>
-                            <textarea class="form-control" rows="4" placeholder="Indique alergias o preferencias..."></textarea>
+                            <textarea name="observaciones" class="form-control" rows="4" placeholder="Indique alergias o preferencias..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 py-3">ENVIAR SOLICITUD</button>
                     </form>

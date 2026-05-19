@@ -2,39 +2,51 @@ const myProjects = [
     //Añadir proyectos aquí
     { 
         name: "Clínica Fisioterapia", 
-        icon: "bi-heart-pulse", 
+        icon: "bi bi-heart-pulse", 
         color: "text-danger",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Salud/Clinica/Fisio/index.html" 
     },
+
     { 
         name: "Gimnasio", 
-        icon: "bi-activity", 
+        icon: "bi bi-activity", 
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Gimnasio/index.html" 
     },
+
     { 
         name: "Hotel", 
-        icon: "bi-building-check", 
+        icon: "bi bi-building-check", 
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Hotel/Rural/index.html" 
     },
+
     { 
         name: "Colegio", 
         icon: "bi bi-mortarboard", 
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Colegio/index.html" 
     },
+
     { 
         name: "Restaurante", 
         icon: "bi bi-cup-hot", 
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Restaurante/index.html" 
     },
+
     {
         name: "Construcción",
         icon: "bi bi-cone-striped",
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Construccion/index.html"
+    },
+
+    {
+        name: "Veterinaria",
+        icon: "bi bi-heart-pulse",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Salud/Veteninaria/index.html"
     }
 ];  
 
@@ -63,7 +75,7 @@ function loadDashboard() {
 }
 // Función para filtrar los proyectos
 function setupSearch() {
-    const searchInput = document.getElementById('searchInput'); // Asegúrate de que este ID coincida con tu HTML
+    const searchInput = document.getElementById('searchInput');
     
     if (!searchInput) return;
 
