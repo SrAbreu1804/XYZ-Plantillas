@@ -1,0 +1,171 @@
+:root {
+    --const-primario: #2c3e50;    /* Gris antracita elegante para la base y textos */
+    --const-acento: #dfbca0;      /* Rosa viejo / Champagne romántico (para el span e iconos) */
+    --const-fondo: #ffffff;       /* Fondo de las tarjetas */
+    --bg-gris-claro: #faf9f6;     /* Marfil / Blanco roto de fondo para toda la web */
+    --blanco: #ffffff;
+    --texto-cuerpo: #5a6b7c;      /* Tono suave para descripciones largas */
+    --sombra: 0 10px 30px rgba(223, 188, 160, 0.12); /* Sombra sutil con el tono acento */
+}
+
+/* --- ESTILOS GENERALES Y RESET --- */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--texto-cuerpo);
+    background-color: var(--bg-gris-claro);
+}
+
+/* --- LOGO Y NAVBAR (Heredado de tu estructura) --- */
+.navbar-dark .navbar-brand {
+    color: var(--blanco) !important;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+/* El toque romántico del logo */
+.navbar-brand span {
+    color: var(--const-acento);
+    margin-left: 2px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: var(--const-acento) !important;
+}
+
+/* --- CONTENEDOR DE SERVICIOS (Flexbox clónico al gimnasio) --- */
+.contenedor-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* --- MAQUETACIÓN DE LAS TARJETAS (.card-gym) --- */
+.card-gym {
+    background: var(--blanco);
+    padding: 45px 35px;
+    border-radius: 4px; /* Bordes más rectos para dar una estética más editorial y fina */
+    box-shadow: var(--sombra);
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(223, 188, 160, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Efecto suave al pasar el cursor */
+.card-gym:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(223, 188, 160, 0.25);
+    border-color: var(--const-acento);
+}
+
+/* Iconos destacados */
+.card-gym__icon {
+    margin-bottom: 22px;
+}
+
+.card-gym__icon i {
+    font-size: 2.5rem;
+    color: var(--const-acento); /* Iconos en tono champagne */
+    display: inline-block;
+}
+
+/* Títulos de las tarjetas */
+.card-gym__title {
+    color: var(--const-primario);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Textos informativos de las tarjetas */
+.card-gym__text.texto-suave {
+    color: var(--texto-cuerpo);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* --- BOTONES PERSONALIZADOS --- */
+.btn-primary {
+    background-color: transparent !important;
+    border: 1px solid var(--const-primario) !important;
+    color: var(--const-primario) !important;
+    padding: 10px 26px !important;
+    font-weight: 500 !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px !important; /* Estilo de botón plano y elegante */
+    transition: all 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--const-primario) !important;
+    color: var(--blanco) !important;
+}
+
+/* --- ELEMENTOS DE FORMULARIO (Sección Contacto) --- */
+.form-label {
+    color: var(--const-primario);
+    letter-spacing: 1px;
+}
+
+.form-control, .form-select {
+    border-radius: 2px !important;
+    border: 1px solid #e1dbd6 !important;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    border-color: var(--const-acento) !important;
+    box-shadow: 0 0 0 0.25rem rgba(223, 188, 160, 0.2) !important;
+}
+
+/* --- ESTILOS DE PRESENTACIÓN (.seccion-presentacion) --- */
+.seccion-presentacion h2 {
+    color: var(--const-primario);
+    letter-spacing: 1.5px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--const-primario) !important;
+    color: var(--blanco);
+    padding: 40px 0;
+    margin-top: 60px;
+    border-top: 2px solid var(--const-acento);
+}
+
+footer p {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.iconos-sociales a {
+    color: var(--blanco);
+    font-size: 1.2rem;
+    margin: 0 12px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.iconos-sociales a:hover {
+    color: var(--const-acento);
+    transform: scale(1.05);
+}

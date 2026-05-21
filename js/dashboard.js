@@ -52,6 +52,12 @@ const myProjects = [
         icon: "bi bi-lightning-charge",
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Deporte/Coach/index.html"
+    },
+    {
+        name: "Eventos",
+        icon: "bi bi-calendar-event",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Eventos/index.html"
     }
 ];  
 
