@@ -58,6 +58,12 @@ const myProjects = [
         icon: "bi bi-calendar-event",
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Eventos/index.html"
+    },
+    {   
+        name: "Portfolio_Personal",
+        icon: "bi bi-person-badge",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Portfolio_personal/index.html"
     }
 ];  
 

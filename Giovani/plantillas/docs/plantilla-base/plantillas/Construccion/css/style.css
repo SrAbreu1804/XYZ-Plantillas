@@ -1,273 +1,427 @@
-/* --- 1. CONFIGURACIÓN Y VARIABLES GLOBALES --- */
 :root {
-    /* Paleta de Colores de Identidad */
-    --colegio-principal: #1a365d; /* Azul Institucional */
-    --colegio-acento: #d4af37;    /* Dorado de Acento */
-    --blanco: #ffffff;             /* Color Puro */
-    --gris-fondo: #f8fafc;        /* Fondo base claro para contraste */
-    --texto-suave: #5a677a;       /* Color legible para descripciones y párrafos */
-    
-    /* Efectos Globales */
-    --sombra-suave: 0 10px 25px rgba(0, 0, 0, 0.05);
-    --sombra-hover: 0 20px 40px rgba(26, 54, 93, 0.12);
-    --transicion-base: all 0.3s ease;
-    --transicion-card: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --dorado: #d4af37;            /* Oro Brillante / Identidad */
+    --negro-fondo: #0a0a0a;       /* Negro Azabache Profundo */
+    --blanco-hueso: #f8f5f0;      /* Blanco Cálido / Editorial */
+    --texto-oscuro: #1a1a1a;      /* Negro Contraste para Lectura */
+    --texto-suave: #666666;       /* Gris Atenuado para Descripciones */
+    --transicion: all 0.3s ease;
 }
 
-/* --- 2. RESETS Y ESTILOS BASE --- */
+/* --- 2. RESETS Y PREVENCIÓN DE DESBORDAMIENTO --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--gris-fondo);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Títulos de sección globales con subrayado decorativo */
-h2.text-center {
-    color: var(--colegio-principal);
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-h2.text-center::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background-color: var(--colegio-acento);
-}
-
-/* Estructura general del contenedor principal */
-main {
-    padding: 60px 0 80px 0;
-}
-
-/* --- 3. COMPONENTE: ENCABEZADO (HEADER HERO) --- */
-.header-main {
-    background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), 
-                url('https://images.unsplash.com/photo-1523050853063-bd8012fec046?q=80&w=2000');
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 60px;
-}
-
-/* --- 4. COMPONENTE: BARRA DE NAVEGACIÓN (NAVBAR) --- */
-.navbar-colegio {
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Estilo del Logo Institucional */
-.logo-colegio {
-    color: var(--blanco) !important;
-    font-size: 1.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-}
-
-.logo-colegio::first-letter {
-    color: var(--colegio-acento);
-    font-size: 2.2rem;
-}
-
-/* Enlaces del Menú de Navegación */
-.nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    margin-left: 20px;
-    transition: var(--transicion-base);
-    text-transform: uppercase;
-}
-
-.nav-link:hover {
-    color: var(--colegio-acento) !important;
-}
-
-.nav-link.active {
-    color: var(--colegio-acento) !important;
-    position: relative;
-}
-
-/* Indicador inferior (línea dorada) para la página activa */
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+html, body { 
     width: 100%;
-    height: 3px;
-    background-color: var(--colegio-acento);
-    border-radius: 2px;
+    max-width: 100%;
+    overflow-x: hidden; /* Corta elementos rebeldes de forma segura */
 }
 
-/* --- 5. COMPONENTE: CONTENEDOR GRID Y TARJETAS (CARDS) --- */
-.contenedor-servicios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Estructura de Tarjetas */
-.card-colegio {
-    background: var(--blanco);
-    border-radius: 20px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: var(--sombra-suave);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    transition: var(--transicion-card);
+body {
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
-    position: relative;
-    overflow: hidden;
+    background-color: #ffffff;
+    color: var(--texto-oscuro);
+    -webkit-text-size-adjust: 100%; /* Evita zoom automático de texto en iOS */
 }
 
-/* Línea decorativa superior en las tarjetas */
-.card-colegio::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+main { 
+    flex: 1 0 auto;
     width: 100%;
-    height: 6px;
-    background: var(--colegio-acento);
 }
 
-/* Efecto de elevación al pasar el cursor */
-.card-colegio:hover {
-    transform: translateY(-12px);
-    box-shadow: var(--sombra-hover);
+/* --- 3. REGLA MAESTRA PARA IMÁGENES RESPONSIVE --- */
+img {
+    max-width: 100%;
+    width: 100%; /* Fuerza a ocupar el contenedor asignado sin cortarse */
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
-/* Elementos internos de las Tarjetas */
-.card-icon {
-    font-size: 3rem;
-    color: var(--colegio-principal) !important;
-    margin-bottom: 20px;
-}
-
-.card-colegio h3 {
-    color: var(--colegio-principal);
-    font-weight: 800;
+/* --- 4. ICONOS CORPORATIVOS (Bootstrap Icons) --- */
+.tarjeta-valor i, 
+.tarjeta-servicio i, 
+.tarjeta-dato-contacto i,
+.lista-viñetas i {
+    display: inline-block !important;
+    color: var(--dorado) !important; 
+    font-size: 3rem !important;    
     margin-bottom: 15px;
 }
 
-.texto-suave {
+.lista-viñetas i {
+    font-size: 1.2rem !important;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.iconos-sociales i { 
+    font-size: 1.5rem !important;
+    color: var(--blanco-hueso) !important;
+    transition: var(--transicion);
+}
+.iconos-sociales a:hover i {
+    color: var(--dorado) !important;
+}
+
+/* --- 5. ENCABEZADO Y BARRA DE NAVEGACIÓN --- */
+header {
+    background-color: var(--negro-fondo);
+    padding: 20px 15px;
+    border-bottom: 2px solid var(--dorado);
+    text-align: center;
+    width: 100%;
+}
+
+.header-content {
+    margin-bottom: 15px;
+}
+
+.logo-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logo-link h1 {
+    color: var(--blanco-hueso);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.logo-link h1 span {
+    color: var(--dorado);
+}
+
+.logo-link p {
     color: var(--texto-suave);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    color: rgba(248, 245, 240, 0.8) !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: var(--transicion);
+    padding: 4px 0;
+}
+
+.nav-link:hover,
+.nav-link.active { 
+    color: var(--dorado) !important;
+    border-bottom: 2px solid var(--dorado);
+}
+
+/* --- 6. SECCIÓN HERO (INICIO) --- */
+.inicio {
+    background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.85)), 
+                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    color: var(--blanco-hueso);
+    padding: 60px 15px; /* Margen interno para evitar que toque los bordes del móvil */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-bloque {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+/* Solución al corte de texto: tipografía responsiva escalable */
+.titulo-principal {
+    font-family: 'Playfair Display', serif;
+    font-size: calc(1.8rem + 1vw); /* Se adapta dinámicamente al ancho del celular */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: #ffffff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.subtitulo {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(248, 245, 240, 0.9);
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.botones-accion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- 7. BOTONES PERSONALIZADOS Y BLOQUES DE ACCIÓN --- */
+.btn-principal, .btn-secundario, .btn-ver-mas, .btn-acento, .btn-formulario {
+    display: inline-block;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    letter-spacing: 1px;
+    width: 100%;
+    max-width: 270px; /* Tamaño ergonómico en móvil */
+    text-align: center;
+    transition: var(--transicion);
+    border-radius: 0;
+}
+
+.btn-principal, .btn-acento {
+    background-color: var(--dorado) !important;
+    color: var(--negro-fondo) !important;
+    border: 2px solid var(--dorado) !important;
+}
+.btn-principal:hover, .btn-acento:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+.btn-secundario {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+}
+.btn-secundario:hover {
+    background-color: #ffffff !important;
+    color: var(--negro-fondo) !important;
+}
+
+.btn-ver-mas {
+    margin-top: auto;
+    background-color: transparent !important;
+    color: var(--texto-oscuro) !important;
+    border: 2px solid var(--texto-oscuro) !important;
+}
+.btn-ver-mas:hover {
+    background-color: var(--texto-oscuro) !important;
+    color: var(--dorado) !important;
+}
+
+/* Ajuste específico para solucionar el corte en la sección final de servicios */
+.bloque-cta {
+    text-align: center;
+    width: 100%;
+    padding: 40px 20px; /* Almohadilla lateral para que el texto no toque el borde del móvil */
+    margin: 0 auto;
+}
+.bloque-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: calc(1.5rem + 1vw);
+    margin-bottom: 15px;
+}
+.bloque-cta p {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 8. BLOQUES, GRIDS Y TARJETAS REUTILIZABLES --- */
+.bloque-introduccion {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    padding: 40px 20px; /* Margen de respiro para los títulos de Nosotros/Servicios/Contacto */
+}
+.bloque-introduccion h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil por defecto */
+    gap: 30px;
+    width: 100%;
+    padding: 0 20px; /* Margen de seguridad lateral para que las tarjetas no rocen el borde */
+}
+
+.tarjeta-proyecto, .tarjeta-valor, .tarjeta-servicio, .tarjeta-dato-contacto {
+    background: #ffffff;
+    border-top: 4px solid var(--dorado);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.tarjeta-proyecto img {
+    height: 220px;
+    width: 100%;
+}
+
+.contenido-p {
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    margin-bottom: 20px;
 }
 
-/* --- 6. COMPONENTE: BOTONES --- */
-.btn-primary {
-    background-color: var(--colegio-principal) !important;
-    border: none !important;
-    padding: 12px 25px !important;
-    border-radius: 10px !important;
-    font-weight: 700 !important;
-    transition: var(--transicion-base) !important;
+/* --- 9. CONFIGURACIÓN DOBLE COLUMNA --- */
+.contenedor-dos-columnas {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    padding: 0 20px; /* Margen de seguridad lateral para textos e imágenes secundarias */
 }
 
-.btn-primary:hover {
-    background-color: var(--colegio-acento) !important;
-    color: var(--colegio-principal) !important;
+.columna-imagen, .columna-texto, 
+.bloque-mision-vision, .columna-info-datos, .columna-formulario {
+    width: 100%;
 }
 
-/* --- 7. BLOQUE RESPONSIVE (MEDIA QUERIES) --- */
+.lista-viñetas {
+    list-style: none;
+    padding: 0;
+}
+.lista-viñetas li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
 
-/* Ajuste para Tablets y Escritorios Pequeños (Debajo de 991px) */
-@media (max-width: 991px) {
-    .header-main {
-        padding-bottom: 30px !important;
-        background-attachment: scroll; /* Mejora drástica del rendimiento en scrolls móviles */
-    }
+/* --- 10. FORMULARIO RECONSTRUIDO --- */
+.tarjeta-formulario {
+    background: #ffffff;
+    padding: 25px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--dorado);
+}
+.grupo-campos-fila {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.campo-formulario {
+    margin-bottom: 15px;
+}
+.campo-formulario label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.campo-formulario input, .campo-formulario select, .campo-formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.btn-formulario {
+    width: 100%;
+    background-color: var(--texto-oscuro) !important;
+    color: var(--dorado) !important;
+    border: 2px solid var(--texto-oscuro) !important;
+}
 
-    .navbar-collapse {
-        display: block !important;  /* Mantiene el menú visible en ausencia de un botón toggler dinámico */
-        width: 100%;
-    }
+/* --- 11. PIE DE PÁGINA (FOOTER) --- */
+footer {
+    background-color: var(--negro-fondo);
+    color: var(--blanco-hueso);
+    padding: 30px 15px;
+    border-top: 3px solid var(--dorado);
+    text-align: center;
+    width: 100%;
+}
 
-    .navbar-colegio .container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-    }
+/* ==========================================================================
+   --- 12. MEDIA QUERIES COMPLETOS (SOPORTE TABLET Y DESKTOP) ---
+   ========================================================================== */
 
-    .logo-colegio {
-        margin-bottom: 20px;
-        display: block;
-    }
-
-    /* Transformación del menú a un listado vertical limpio en móviles */
-    .navbar-nav {
-        flex-direction: column !important;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-    }
-
-    .nav-item {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-link {
-        margin: 0 !important;
-        padding: 12px 0 !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        display: block;
-    }
-
-    .nav-link:last-child {
-        border-bottom: none;
-    }
-
-    .nav-link.active {
-        background: rgba(212, 175, 55, 0.1); /* Resaltado dorado translúcido de fondo */
-        color: var(--colegio-acento) !important;
-    }
-
-    .nav-link.active::after {
-        display: none; /* Evitamos que la barra rígida flote descolocada en el layout móvil */
-    }
-
-    /* Redimensionamiento adaptativo del grid a una sola columna */
-    .contenedor-servicios {
-        grid-template-columns: 1fr !important;
-        padding: 0 20px;
-    }
-
-    h2.text-center {
-        font-size: 1.8rem !important;
+@media (min-width: 576px) {
+    .botones-accion {
+        flex-direction: row; /* Botones en línea en pantallas medianas */
     }
 }
 
-/* Ajustes finos para teléfonos inteligentes pequeños (Debajo de 576px) */
-@media (max-width: 576px) {
-    .header-main {
-        padding-top: 20px !important;
+@media (min-width: 768px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        text-align: left;
+    }
+    .header-content { margin-bottom: 0; }
+    nav ul { gap: 25px; }
+
+    .inicio { padding: 100px 20px; }
+    .titulo-principal { font-size: 3.5rem; }
+
+    .contenedor-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Columnas en Tablets */
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 40px;
+    }
+
+    .contenedor-dos-columnas {
+        flex-direction: row;
+        align-items: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 40px;
     }
     
-    .logo-colegio {
-        font-size: 1.5rem !important;
+    .bloque-cta {
+        max-width: 1200px;
+        padding: 60px 40px;
+    }
+    
+    .columna-imagen, .columna-texto, .bloque-mision-vision, .columna-info-datos, .columna-formulario {
+        flex: 1;
+    }
+    .grupo-campos-fila {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .contenedor-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 Columnas en PC */
+    }
+    .inicio {
+        background-attachment: fixed; /* Efecto parallax solo en PC */
     }
 }

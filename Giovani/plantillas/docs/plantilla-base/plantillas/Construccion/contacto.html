@@ -10,86 +10,92 @@
 
 </head>
 <body>
-                            
-<header>
-    <div class="header-content">
-        <a href="index.html" class="logo-link">
-            <h1><span>TU</span>CONSTRUCCIÓN</h1>
-            <p>SOLUCIONES INTEGRALES</p>
-        </a>
-    </div>
+                                                      
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-link">
+                <h1><span>TU</span>CONSTRUCCIÓN</h1>
+                <p>SOLUCIONES INTEGRALES</p>
+            </a>
+        </div>
 
-    <nav>
-        <ul>
-            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
-            <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-</header>
-    
-<main class="container my-5">
-    <section class="mb-5">
-        <article>
-            <h1>SOLICITA TU PRESUPUESTO</h1>
-            <p>Cuéntanos tu idea y nuestro equipo técnico se pondrá en contacto contigo para una valoración detallada.</p>
-        </article>
-    </section>
+        <nav>
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+        
+    <main>
+        <section class="seccion-bloque">
+            <article class="bloque-introduccion">
+                <h1>SOLICITA TU PRESUPUESTO</h1>
+                <p>Cuéntanos tu idea y nuestro equipo técnico se pondrá en contacto contigo para una valoración detallada.</p>
+            </article>
+        </section>
 
-    <section>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="d-flex flex-column h-100">
-                    <article class="mb-4">
+        <section class="seccion-contacto">
+            <div class="contenedor-dos-columnas">
+                
+                <div class="columna-info-datos">
+                    <article class="tarjeta-dato-contacto">
                         <i class="bi bi-geo-alt-fill"></i>
                         <h3>Oficina Central</h3>
                         <p>Calle Industrial, 123<br>38001 Santa Cruz de Tenerife</p>
                     </article>
-                    <article>
+                    
+                    <article class="tarjeta-dato-contacto">
                         <i class="bi bi-clock-fill"></i>
                         <h3>Horario</h3>
                         <p>Lunes a Viernes<br>08:00 - 18:00</p>
                     </article>
                 </div>
-            </div>
 
-            <div class="col-md-8">
-                <article>
-                    <form action="https://formsubmit.co/tuemail" method="POST" class="w-100 text-start">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Nombre</label>
-                                <input type="text" class="form-control" required>
+                <div class="columna-formulario">
+                    <article class="tarjeta-formulario">
+                        <form action="https://formsubmit.co/giovannibareadomingues@gmail.com" method="POST">
+                            
+                            <div class="grupo-campos-fila">
+                                <div class="campo-formulario">
+                                    <label>Nombre</label>
+                                    <input type="text" required>
+                                </div>
+                                <div class="campo-formulario">
+                                    <label>Teléfono</label>
+                                    <input type="tel" required>
+                                </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Teléfono</label>
-                                <input type="tel" class="form-control" required>
+
+                            <div class="campo-formulario">
+                                <label>Correo electrónico</label>
+                                <input type="email" required>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Correo</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold">Tipo de Proyecto</label>
-                            <select class="form-select">
-                                <option>Obra Nueva</option>
-                                <option>Reforma</option>
-                                <option>Mantenimiento</option>
-                            </select>
-                        </div>
-                        <div class="mb-4">
-                            <label class="form-label fw-bold">Detalles</label>
-                            <textarea class="form-control" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-warning w-100 py-3 fw-bold">ENVIAR SOLICITUD</button>
-                    </form>
-                </article>
+
+                            <div class="campo-formulario">
+                                <label>Tipo de Proyecto</label>
+                                <select>
+                                    <option>Obra Nueva</option>
+                                    <option>Reforma</option>
+                                    <option>Mantenimiento</option>
+                                </select>
+                            </div>
+
+                            <div class="campo-formulario">
+                                <label>Detalles del Proyecto</label>
+                                <textarea rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-formulario">ENVIAR SOLICITUD</button>
+                        </form>
+                    </article>
+                </div>
+
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
     <footer>
     <div class="container text-center">
