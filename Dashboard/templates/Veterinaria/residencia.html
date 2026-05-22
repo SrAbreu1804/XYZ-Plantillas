@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencia de Mascotas - Clínica Veterinaria</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- ══ HEADER ════════════════════════════════════════════ -->
+    <header>
+        <h1><i class="bi bi-heart-pulse"></i> Clínica Veterinaria</h1>
+    </header>
+
+    <!-- ══ NAVBAR ════════════════════════════════════════════ -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+            <!-- Botón hamburguesa (solo visible en móvil) -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Lista de enlaces (se oculta en móvil y aparece al pulsar el botón) -->
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="clinica.html">Nuestra Clínica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="peluqueria.html">Peluquería Canina</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="residencia.html">Residencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ecommerce.html">Ecommerce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contactar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mascotas.html">Mascotas recuperadas</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ══ MAIN ══════════════════════════════════════════════ -->
+    <main>
+
+        <!-- Imagen principal (Perro feliz en un parque/residencia) -->
+        <img class="hero-img"
+             src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?q=80&w=1170&auto=format&fit=crop"
+             alt="Perros jugando felices en la residencia">
+
+        <!-- Sección de introducción -->
+        <section class="seccion-intro text-center py-5">
+            <div class="container">
+                <h2>Residencia para Mascotas</h2>
+                <p class="lead mt-3 mb-4">
+                    Sabemos lo difícil que es separarte de tu mejor amigo cuando te vas de viaje. 
+                    Por eso, en nuestra residencia le ofrecemos un entorno seguro, divertido y lleno de cariño. 
+                    Además, con la tranquilidad de contar con supervisión veterinaria las 24 horas.
+                </p>
+                <a href="contacto.html" class="btn btn-success btn-verde btn-lg">Reservar estancia</a>
+            </div>
+        </section>
+
+        <!-- Sección de tarjetas de características de la residencia -->
+        <section class="seccion-servicios py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">¿Qué incluye nuestra residencia?</h2>
+                <div class="row g-4 text-center">
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-servicio p-4 bg-white rounded shadow-sm h-100">
+                            <div class="icono mb-3 fs-1 text-success"><i class="bi bi-door-open"></i></div>
+                            <h5>Habitaciones individuales</h5>
+                            <p>Espacios amplios, climatizados y sin jaulas para que tu mascota descanse sin estrés.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-servicio p-4 bg-white rounded shadow-sm h-100">
+                            <div class="icono mb-3 fs-1 text-success"><i class="bi bi-tree"></i></div>
+                            <h5>Zonas de recreo</h5>
+                            <p>Patios al aire libre con césped donde jugarán y socializarán varias veces al día bajo supervisión.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-servicio p-4 bg-white rounded shadow-sm h-100">
+                            <div class="icono mb-3 fs-1 text-success"><i class="bi bi-shield-plus"></i></div>
+                            <h5>Supervisión Veterinaria</h5>
+                            <p>Al estar integrados en la clínica, garantizamos atención médica inmediata si surge cualquier imprevisto.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="tarjeta-servicio p-4 bg-white rounded shadow-sm h-100">
+                            <div class="icono mb-3 fs-1 text-success"><i class="bi bi-camera-video"></i></div>
+                            <h5>Reporte diario</h5>
+                            <p>Te enviaremos fotos y vídeos diarios por WhatsApp para que veas lo bien que se lo está pasando.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de requisitos -->
+        <section class="seccion-requisitos py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h3 class="mb-4">Requisitos de admisión</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Cartilla de vacunación al día (incluyendo la vacuna de la Tos de las Perreras).</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Desparasitación interna y externa reciente.</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Microchip de identificación obligatorio.</li>
+                            <li class="list-group-item"><i class="bi bi-check-circle-fill text-success me-2"></i> Informar sobre cualquier tratamiento médico o dieta especial.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ══ FOOTER ════════════════════════════════════════════ -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-2">&copy; 2026 Clínica Veterinaria — Plantilla creada por ROBOOTICS EDUCATION SOLUTIONS S.L.</p>
+            <div class="fs-4">
+                <a href="https://www.instagram.com/robootics/" aria-label="Instagram" class="text-white me-3">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/robootics/" aria-label="Facebook" class="text-white">
+                    <i class="bi bi-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (necesario para el menú hamburguesa) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

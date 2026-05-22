@@ -1,0 +1,519 @@
+/* ═══════════════════════════════════════════════════════════
+   style.css  —  Clínica Veterinaria
+   Archivo de estilos compartido por todas las páginas del sitio
+   ═══════════════════════════════════════════════════════════ */
+
+
+/* ── 1. VARIABLES GLOBALES ─────────────────────────────────
+   Aquí defines los colores y valores que se repiten en todo
+   el sitio. Si quieres cambiar el color principal, solo lo
+   cambias aquí y se actualiza en todas las páginas.
+────────────────────────────────────────────────────────── */
+:root {
+    --verde:         #2e7d52;
+    --verde-oscuro:  #1a5c3a;
+    --verde-claro:   #e8f5ee;
+    --gris-texto:    #444444;
+    --gris-suave:    #777777;
+    --borde:         #dddddd;
+    --blanco:        #ffffff;
+}
+
+
+/* ── 2. RESET Y BASE ────────────────────────────────────────
+   Ajustes mínimos que aplican a toda la página.
+────────────────────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--gris-texto);
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ── 3. HEADER ──────────────────────────────────────────────
+   La barra superior verde con el nombre de la clínica.
+────────────────────────────────────────────────────────── */
+header {
+    background-color: var(--verde);
+    color: var(--blanco);
+    padding: 1.2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+
+/* ── 4. NAVBAR ──────────────────────────────────────────────
+   Bootstrap gestiona el comportamiento móvil,
+   aquí solo sobreescribimos los colores.
+────────────────────────────────────────────────────────── */
+.navbar {
+    background-color: var(--verde-oscuro) !important;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.92rem;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--blanco) !important;
+    text-decoration: underline;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ── 5. FOOTER ──────────────────────────────────────────────
+   Pie de página verde oscuro con texto e iconos sociales.
+────────────────────────────────────────────────────────── */
+footer {
+    background-color: var(--verde-oscuro);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.88rem;
+}
+
+footer p {
+    margin: 0 0 0.5rem;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.3rem;
+    margin: 0 0.4rem;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--blanco);
+}
+
+
+/* ── 6. IMAGEN HERO ─────────────────────────────────────────
+   La imagen grande de portada del index.
+   object-fit: cover recorta sin deformar.
+────────────────────────────────────────────────────────── */
+.hero-img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ── 7. SECCIÓN INTRO (index) ───────────────────────────────
+────────────────────────────────────────────────────────── */
+.seccion-intro {
+    background-color: var(--verde-claro);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.seccion-intro h2 {
+    color: var(--verde);
+    margin-bottom: 1rem;
+}
+
+.seccion-intro p {
+    color: var(--gris-texto);
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.7;
+}
+
+
+/* ── 8. BOTÓN PRINCIPAL ─────────────────────────────────────
+   Uso: <a href="..." class="btn-verde">Texto</a>
+────────────────────────────────────────────────────────── */
+.btn-verde {
+    display: inline-block;
+    background-color: var(--verde);
+    color: var(--blanco);
+    border: none;
+    padding: 0.6rem 1.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.btn-verde:hover {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+
+/* ── 9. TARJETAS DE SERVICIOS (index) ──────────────────────
+────────────────────────────────────────────────────────── */
+.seccion-servicios {
+    padding: 3rem 1.5rem;
+}
+
+.seccion-servicios h2 {
+    text-align: center;
+    color: var(--verde);
+    margin-bottom: 2rem;
+}
+
+.tarjeta-servicio {
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    padding: 1.8rem 1.2rem;
+    text-align: center;
+    height: 100%;
+    background-color: var(--blanco);
+    transition: box-shadow 0.25s;
+}
+
+.tarjeta-servicio:hover {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-servicio .icono {
+    font-size: 2.5rem;
+    color: var(--verde);
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta-servicio h5 {
+    color: var(--gris-texto);
+    font-weight: 600;
+}
+
+.tarjeta-servicio p {
+    color: var(--gris-suave);
+    font-size: 0.9rem;
+}
+
+.tarjeta-servicio a {
+    color: var(--verde);
+    font-size: 0.88rem;
+    text-decoration: none;
+}
+
+.tarjeta-servicio a:hover {
+    text-decoration: underline;
+}
+
+
+/* ── 10. CABECERA DE SECCIÓN (páginas interiores) ───────────
+   Bloque verde claro con título y subtítulo,
+   reutilizable en contacto, clínica, nosotros, etc.
+────────────────────────────────────────────────────────── */
+.cabecera-seccion {
+    background-color: var(--verde-claro);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.cabecera-seccion h1 {
+    color: var(--verde);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cabecera-seccion p {
+    color: var(--gris-suave);
+    font-size: 1rem;
+    margin: 0;
+}
+
+
+/* ── 11. PÁGINA DE CONTACTO ─────────────────────────────────
+────────────────────────────────────────────────────────── */
+
+/* Formulario */
+.formulario-contacto {
+    background-color: var(--blanco);
+}
+
+.formulario-contacto .form-label {
+    color: var(--gris-texto);
+    font-weight: 500;
+}
+
+.formulario-contacto .form-control:focus,
+.formulario-contacto .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 82, 0.2);
+}
+
+/* Columna de información (dirección, teléfono…) */
+.info-contacto {
+    background-color: var(--verde-claro);
+    border-radius: 10px;
+    padding: 2rem;
+    height: 100%;
+}
+
+.info-contacto h3 {
+    color: var(--verde);
+    margin-bottom: 1.2rem;
+}
+
+.info-contacto li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+    color: var(--gris-texto);
+    font-size: 0.95rem;
+}
+
+.info-contacto li i {
+    color: var(--verde);
+    font-size: 1.1rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Mapa embebido de Google */
+.mapa-contenedor {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    height: 260px;
+    border: 0;
+    display: block;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ESTILOS ECOMMERCE — Catálogo de productos
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── FILTROS ─────────────────────────────────────────────── */
+.filtros-ecommerce {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid var(--verde-claro);
+}
+
+.filtro-btn {
+    background-color: var(--blanco);
+    border: 1.5px solid var(--borde);
+    color: var(--gris-texto);
+    padding: 0.45rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.filtro-btn:hover {
+    border-color: var(--verde);
+    color: var(--verde);
+    background-color: var(--verde-claro);
+}
+
+.filtro-btn.activo {
+    background-color: var(--verde);
+    border-color: var(--verde);
+    color: var(--blanco);
+    font-weight: 600;
+}
+
+/* ── TARJETAS DE PRODUCTO ────────────────────────────────── */
+.tarjeta-producto {
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--blanco);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.tarjeta-producto:hover {
+    box-shadow: 0 6px 24px rgba(46, 125, 82, 0.13);
+    transform: translateY(-3px);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--borde);
+}
+
+.tarjeta-producto .cuerpo {
+    padding: 1.1rem 1.2rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.5rem;
+}
+
+.tarjeta-producto h6 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gris-texto);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.categoria-badge {
+    display: inline-block;
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    width: fit-content;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--verde-oscuro);
+    margin-top: 0.2rem;
+}
+
+.precio span {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--gris-suave);
+}
+
+.tarjeta-producto .btn-verde {
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
+}
+
+/* ── BANNER ASESORÍA ─────────────────────────────────────── */
+.banner-asesoria {
+    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-oscuro) 100%);
+    color: var(--blanco);
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 3.5rem;
+}
+
+.banner-asesoria h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.banner-asesoria h3 i {
+    margin-right: 0.4rem;
+}
+
+.banner-asesoria p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+.btn-blanco {
+    display: inline-block;
+    background-color: var(--blanco);
+    color: var(--verde-oscuro);
+    border: none;
+    padding: 0.65rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-blanco:hover {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ESTILOS MASCOTAS — Álbum de fotos
+   ═══════════════════════════════════════════════════════════ */
+
+.galeria-mascotas {
+    columns: 4 240px;
+    column-gap: 1rem;
+}
+
+.foto-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: var(--verde-claro);
+}
+
+.foto-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.foto-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.82);
+}
+
+.foto-pie {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(26, 92, 58, 0.85) 0%, transparent 100%);
+    color: var(--blanco);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 1.4rem 0.9rem 0.65rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 0 0 10px 10px;
+    letter-spacing: 0.3px;
+}
+
+.foto-item:hover .foto-pie {
+    opacity: 1;
+}
+
+/* Responsive: 2 columnas en móvil */
+@media (max-width: 575px) {
+    .galeria-mascotas {
+        columns: 2 140px;
+        column-gap: 0.6rem;
+    }
+
+    .foto-item {
+        margin-bottom: 0.6rem;
+    }
+}

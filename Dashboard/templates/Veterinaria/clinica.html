@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica — Clínica Veterinaria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <h1><i class="bi bi-heart-pulse"></i> Clínica Veterinaria</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="clinica.html">Nuestra Clínica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="peluqueria.html">Peluquería Canina</a></li>
+                    <li class="nav-item"><a class="nav-link" href="residencia.html">Residencia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ecommerce.html">Ecommerce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contactar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mascotas.html">Mascotas recuperadas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="cabecera-seccion">
+            <h1>Nuestra clínica</h1>
+            <p>Atención veterinaria profesional y cercana, con 20 años de experiencia.</p>
+        </section>
+
+        <!-- Descripción general -->
+        <section class="container my-5">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <h2 style="color: var(--verde);">¿Qué hacemos?</h2>
+                    <p>Nuestra clínica ofrece atención médica completa para perros, gatos y pequeños animales. Contamos con equipamiento moderno para diagnóstico, tratamiento y seguimiento de enfermedades.</p>
+                    <p>Realizamos intervenciones quirúrgicas habituales, urgencias, análisis clínicos, vacunaciones y desparasitaciones. Nuestro equipo está formado por veterinarios colegiados con formación continuada.</p>
+                    <a href="contacto.html" class="btn-verde">Pedir cita</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=800&auto=format&fit=crop"
+                         alt="Veterinario revisando a un perro"
+                         class="img-fluid rounded"
+                         style="max-height: 320px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergencias -->
+        <section style="background-color: var(--verde-claro); padding: 3rem 0;">
+            <div class="container">
+                <h2 style="color: var(--verde); text-align: center; margin-bottom: 0.5rem;">Urgencias que atendemos</h2>
+                <p style="text-align: center; color: var(--gris-suave); margin-bottom: 0;">Si tu mascota presenta alguna de estas situaciones, llámanos de inmediato.</p>
+
+                <div class="grid-emergencias">
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-thermometer-high"></i>
+                        <h6>Fiebre alta</h6>
+                        <p>Temperatura superior a 39,5°C con síntomas de decaimiento.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-bandaid"></i>
+                        <h6>Heridas y cortes</h6>
+                        <p>Laceraciones, heridas por mordedura o cortes con sangrado.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <h6>Intoxicaciones</h6>
+                        <p>Ingestión de tóxicos, plantas venenosas o medicamentos.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-lungs"></i>
+                        <h6>Dificultad respiratoria</h6>
+                        <p>Jadeo excesivo, respiración agitada o tos persistente.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-droplet"></i>
+                        <h6>Vómitos y diarrea</h6>
+                        <p>Episodios repetidos o con sangre que requieren atención rápida.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-eye"></i>
+                        <h6>Problemas oculares</h6>
+                        <p>Ojo rojo, secreción intensa, lagrimeo o úlcera corneal.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-person-arms-up"></i>
+                        <h6>Convulsiones leves</h6>
+                        <p>Episodios convulsivos aislados sin traumatismo craneal grave.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-activity"></i>
+                        <h6>Traumatismos menores</h6>
+                        <p>Caídas, golpes o atropellos sin sospecha de lesión interna grave.</p>
+                    </div>
+                    <div class="tarjeta-emergencia">
+                        <i class="bi bi-virus"></i>
+                        <h6>Reacciones alérgicas</h6>
+                        <p>Inflamación, urticaria o reacción ante picaduras de insectos.</p>
+                    </div>
+                </div>
+
+                <!-- Aviso sobre límites -->
+                <div class="aviso-limites mt-4">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <strong>¿Qué no realizamos?</strong> Las cirugías de alta complejidad que requieran equipamiento de hospital veterinario especializado (como cirugía cardíaca, neurocirugía o trauma ortopédico grave) están fuera de nuestro alcance. En esos casos te derivamos al centro especializado más adecuado y te acompañamos en el proceso.
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios generales -->
+        <section class="container my-5">
+            <h2 style="color: var(--verde); text-align: center; margin-bottom: 2rem;">Servicios habituales</h2>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tarjeta-servicio">
+                        <div class="icono"><i class="bi bi-syringe"></i></div>
+                        <h5>Vacunaciones</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tarjeta-servicio">
+                        <div class="icono"><i class="bi bi-search-heart"></i></div>
+                        <h5>Diagnóstico</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tarjeta-servicio">
+                        <div class="icono"><i class="bi bi-clipboard2-pulse"></i></div>
+                        <h5>Análisis clínicos</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tarjeta-servicio">
+                        <div class="icono"><i class="bi bi-radioactive"></i></div>
+                        <h5>Desparasitación</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tarjeta-servicio">
+                        <div class="icono"><i class="bi bi-scissors"></i></div>
+                        <h5>Cirugía menor</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="tarjeta-servicio">
+                        <div class="icono"><i class="bi bi-calendar-check"></i></div>
+                        <h5>Seguimiento</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Clínica Veterinaria — Plantilla creada por ROBOOTICS EDUCATION SOLUTIONS S.L.</p>
+            <div>
+                <a href="https://www.instagram.com/robootics/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/robootics/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

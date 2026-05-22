@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda — Clínica Veterinaria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <header>
+        <h1><i class="bi bi-heart-pulse"></i> Clínica Veterinaria</h1>
+    </header>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav mx-auto gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="clinica.html">Nuestra Clínica</a></li>
+                    <li class="nav-item"><a class="nav-link" href="peluqueria.html">Peluquería Canina</a></li>
+                    <li class="nav-item"><a class="nav-link" href="residencia.html">Residencia</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ecommerce.html">Ecommerce</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contactar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mascotas.html">Mascotas recuperadas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="cabecera-seccion">
+            <h1>Tienda online</h1>
+            <p>Productos recomendados por nuestros veterinarios. Asesoramiento incluido en cada compra.</p>
+        </section>
+
+        <section class="container my-5">
+
+            <!-- Filtros -->
+            <div class="filtros-ecommerce" id="filtros">
+                <button class="filtro-btn activo" data-cat="todos">Todos</button>
+                <button class="filtro-btn" data-cat="pienso">Pienso y alimentación</button>
+                <button class="filtro-btn" data-cat="higiene">Higiene</button>
+                <button class="filtro-btn" data-cat="antiparasitario">Antiparasitarios</button>
+                <button class="filtro-btn" data-cat="accesorios">Accesorios</button>
+                <button class="filtro-btn" data-cat="suplementos">Suplementos</button>
+            </div>
+
+            <!-- Productos -->
+            <div class="row g-4" id="catalogo">
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="pienso">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?q=80&w=600&auto=format&fit=crop" alt="Pienso premium para perros">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Pienso y alimentación</span>
+                            <h6>Pienso premium adulto (perro)</h6>
+                            <div class="precio">24,90 € <span>/ 3 kg</span></div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="pienso">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=600&auto=format&fit=crop" alt="Pienso para gatos">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Pienso y alimentación</span>
+                            <h6>Pienso sterilised para gato</h6>
+                            <div class="precio">18,50 € <span>/ 2 kg</span></div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="higiene">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1516750930166-ed88ab1adb61?q=80&w=600&auto=format&fit=crop" alt="Champú para perros">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Higiene</span>
+                            <h6>Champú dermatológico canino</h6>
+                            <div class="precio">12,00 € <span>/ 500 ml</span></div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="antiparasitario">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=600&auto=format&fit=crop" alt="Pipetas antiparasitarias">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Antiparasitarios</span>
+                            <h6>Pipetas antipulgas (pack 3)</h6>
+                            <div class="precio">14,95 €</div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="accesorios">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?q=80&w=600&auto=format&fit=crop" alt="Arnés para perro">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Accesorios</span>
+                            <h6>Arnés ergonómico acolchado</h6>
+                            <div class="precio">22,00 €</div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="suplementos">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?q=80&w=600&auto=format&fit=crop" alt="Suplemento articular">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Suplementos</span>
+                            <h6>Condroprotector articular</h6>
+                            <div class="precio">31,00 € <span>/ 60 comprimidos</span></div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="higiene">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=600&auto=format&fit=crop" alt="Pasta dental para perros">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Higiene</span>
+                            <h6>Kit dental para perros</h6>
+                            <div class="precio">9,50 €</div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="antiparasitario">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=600&auto=format&fit=crop" alt="Collar antiparasitario">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Antiparasitarios</span>
+                            <h6>Collar antiparasitario 8 meses</h6>
+                            <div class="precio">27,90 €</div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4" data-cat="accesorios">
+                    <div class="tarjeta-producto">
+                        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop" alt="Cama para perro">
+                        <div class="cuerpo">
+                            <span class="categoria-badge">Accesorios</span>
+                            <h6>Cama ortopédica para perro</h6>
+                            <div class="precio">48,00 €</div>
+                            <a href="contacto.html" class="btn-verde" style="font-size:0.85rem; padding: 0.45rem 1rem;">Pedir asesoramiento</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Banner asesoría -->
+            <div class="banner-asesoria">
+                <h3><i class="bi bi-chat-heart"></i> ¿No sabes qué producto necesita tu mascota?</h3>
+                <p>Nuestros veterinarios te orientan sin compromiso. Cuéntanos la raza, edad y situación de tu animal y te recomendamos lo más adecuado.</p>
+                <a href="contacto.html" class="btn-blanco">Solicitar asesoramiento gratis</a>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Clínica Veterinaria — Plantilla creada por ROBOOTICS EDUCATION SOLUTIONS S.L.</p>
+            <div>
+                <a href="https://www.instagram.com/robootics/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/robootics/" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filtro de productos por categoría
+        const filtros = document.querySelectorAll('.filtro-btn');
+        const productos = document.querySelectorAll('#catalogo [data-cat]');
+
+        filtros.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Marcar botón activo
+                filtros.forEach(b => b.classList.remove('activo'));
+                btn.classList.add('activo');
+
+                const cat = btn.dataset.cat;
+
+                productos.forEach(prod => {
+                    // Si el filtro es "todos" o coincide con la categoría, se muestra
+                    if (cat === 'todos' || prod.dataset.cat === cat) {
+                        prod.style.display = '';
+                    } else {
+                        prod.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

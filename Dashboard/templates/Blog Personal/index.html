@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aitor Abreu | Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- ═══ BOTÓN ABRIR MENÚ ═══ -->
+    <button class="btn-abrir-menu" aria-label="Abrir menú">
+        <i class='bx bx-menu'></i> Menú
+    </button>
+
+    <!-- ═══ OVERLAY (fondo oscuro al abrir) ═══ -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- ═══════════════════════════════════════
+         SIDE NAV COMPLETO
+    ════════════════════════════════════════ -->
+    <aside id="menu-lateral">
+
+        <div class="sidenav-header">
+            <span class="sidenav-titulo">Aitor Abreu</span>
+            <button class="btn-cerrar-menu" aria-label="Cerrar menú">
+                <i class='bx bx-x'></i>
+            </button>
+        </div>
+
+        <nav class="sidenav-nav">
+            <ul class="sidenav-lista">
+
+                <!-- Sobre mí -->
+                <li>
+                    <a href="#sobre-mi" class="sidenav-link" data-seccion="sobre-mi">
+                        <i class='bx bx-user-circle'></i>
+                        <span>Sobre mí</span>
+                    </a>
+                </li>
+
+                <!-- Experiencia Laboral -->
+                <li>
+                    <a href="#experiencia" class="sidenav-link" data-seccion="experiencia">
+                        <i class='bx bx-briefcase'></i>
+                        <span>Experiencia Laboral</span>
+                    </a>
+                </li>
+
+                <!-- Proyectos -->
+                <li>
+                    <a href="#proyectos" class="sidenav-link" data-seccion="proyectos">
+                        <i class='bx bx-code-block'></i>
+                        <span>Proyectos</span>
+                    </a>
+                </li>
+
+                <!-- Redes Sociales (submenú) -->
+                <li class="tiene-submenu">
+                    <button class="sidenav-link sidenav-btn-submenu" aria-expanded="false">
+                        <i class='bx bx-share-alt'></i>
+                        <span>Redes Sociales</span>
+                        <i class='bx bx-chevron-down icono-chevron'></i>
+                    </button>
+                    <ul class="submenu">
+                        <li>
+                            <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="submenu-link">
+                                <i class='bx bxl-linkedin-square'></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/tu-usuario" target="_blank" class="submenu-link">
+                                <i class='bx bxl-instagram-alt'></i> Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/tu-usuario" target="_blank" class="submenu-link">
+                                <i class='bx bxl-github'></i> GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Contacto -->
+                <li>
+                    <a href="#contacto" class="sidenav-link" data-seccion="contacto">
+                        <i class='bx bx-envelope'></i>
+                        <span>Contacto</span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <!-- Info de contacto al fondo -->
+        <div class="sidenav-footer">
+            <p><i class='bx bx-map-pin'></i> Los Llanos de Aridane, La Palma, Canarias, España</p>
+            <p><i class='bx bx-envelope'></i> aabreu1804@gmail.com</p>
+        </div>
+
+    </aside>
+    <!-- ═══ FIN SIDE NAV ═══ -->
+
+
+    <header>
+        <h1>Aitor Abreu</h1>
+        <p class="subtitulo">Desarrollador Web &amp; Técnico de Sistemas</p>
+    </header>
+
+    <section class="contenedor-slider">
+        <div class="skills-box">
+            <h2>Mis Habilidades</h2>
+            <div class="slider-wrapper">
+                <button class="flecha flecha-prev" aria-label="Anterior">&#4309;</button>
+                <ul class="slider">
+                    <li class="slider-item">
+                        <i class='bx bx-desktop-alt'></i>
+                        <h3>Desarrollo Web</h3>
+                    </li>
+                    <li class="slider-item">
+                        <i class='bx bx-code-alt'></i>
+                        <h3>Programación</h3>
+                    </li>
+                    <li class="slider-item">
+                        <i class='bx bx-data'></i>
+                        <h3>Bases de Datos</h3>
+                    </li>
+                    <li class="slider-item">
+                        <i class='bx bx-git-branch'></i>
+                        <h3>Gestión de Redes</h3>
+                    </li>
+                    <li class="slider-item">
+                        <i class='bx bx-server'></i>
+                        <h3>Gestión Sistemas</h3>
+                    </li>
+                    <li class="slider-item">
+                        <i class='bx bx-wrench'></i>
+                        <h3>Montaje de PCs</h3>
+                    </li>
+                </ul>
+                <button class="flecha flecha-next" aria-label="Siguiente">&#4308;</button>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="sobre-mi" class="seccion-contenido">
+            <h2>Sobre mí</h2>
+            <p>Soy un apasionado de la tecnología y el desarrollo web. Cuento con formación especializada en programación a través de cursos en OpenWebinars, complementando mis conocimientos técnicos con experiencia práctica en sistemas, redes y soporte informático.</p>
+        </section>
+
+        <section id="experiencia" class="seccion-contenido">
+            <h2>Experiencia Laboral</h2>
+            <div class="tarjeta-experiencia">
+                <h3>Técnico Informático</h3>
+                <p class="empresa">ATOS</p>
+                <p class="periodo"><i class='bx bx-calendar'></i> Febrero 2024 – Mayo 2024 (3 meses)</p>
+                <p class="descripcion">Desempeño de funciones técnicas críticas orientadas al soporte de sistemas, gestión de incidencias de usuario, monitorización básica de redes y optimización de equipamiento informático corporativo.</p>
+            </div>
+        </section>
+
+        <section id="proyectos" class="seccion-contenido">
+            <h2>Proyectos</h2>
+            <p>Echa un vistazo a los repositorios de código y despliegues en los que he estado trabajando recientemente:</p>
+            <a href="https://github.com/tu-usuario" target="_blank" class="btn-github">
+                <i class='bx bxl-github'></i> Ver proyectos en GitHub
+            </a>
+        </section>
+
+        <section id="contacto" class="seccion-contenido">
+            <h2>Contacto</h2>
+            <p>¿Tienes un proyecto en mente o buscas un perfil técnico polivalente? Hablemos.</p>
+            <div class="redes-sociales">
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="link-red">
+                    <i class='bx bxl-linkedin-square'></i> LinkedIn
+                </a>
+                <a href="https://instagram.com/tu-usuario" target="_blank" class="link-red">
+                    <i class='bx bxl-instagram-alt'></i> Instagram
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aitor Abreu. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
