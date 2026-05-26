@@ -64,7 +64,14 @@ const myProjects = [
         icon: "bi bi-person-badge",
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/Portfolio_personal/index.html"
-    }
+    },
+    {
+        name: "ONG",
+        icon: "bi bi-people",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/ONG/index.html"
+    },
+
 ];  
 
 function renderProjects(projectsList) {
