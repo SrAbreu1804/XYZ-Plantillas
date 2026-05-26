@@ -1,0 +1,359 @@
+:root {
+    /* Paleta Ejecutiva Contemporánea "Slate & Teal" */
+    --color-pizarra-oscuro: #1e293b;   /* Color principal de la marca (Textos firmes y fondos) */
+    --color-teal-innovacion: #0d9488;  /* Color de acento moderno (Enlaces, botones e iconos) */
+    --color-teal-interactivo: #0f766e; /* Tono de acento más oscuro para efectos al pasar el ratón (Hover) */
+    --color-gris-cuerpo: #475569;      /* Gris intermedio, ideal para que los párrafos largos no cansen la vista */
+    --color-gris-subtitulos: #334155;  /* Gris oscuro elegante para elementos secundarios */
+    --color-fondo-suave: #f8fafc;      /* Fondo grisáceo muy claro para bloques y secciones alternas */
+    --color-blanco-puro: #ffffff;
+    --color-borde-sutil: #e2e8f0;      /* Líneas de separación muy finas para tarjetas y cajas */
+    
+    /* Tipografía del Sistema */
+    --fuente-principal: 'Inter', system-ui, -apple-system, sans-serif;
+    
+    /* Animación de transición global */
+    --transicion-efecto: all 0.25s ease-in-out;
+}
+
+/* ==========================================================================
+   1. RESET GENERAL Y REGLAS BASE
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-gris-cuerpo);
+    background-color: var(--color-blanco-puro);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Suaviza el renderizado de las letras en pantalla */
+}
+
+/* Configuración de Encabezados */
+h1, h2, h3, h4 {
+    color: var(--color-pizarra-oscuro);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* Pequeña línea decorativa turquesa debajo de los títulos H2 que estén centrados */
+h2.text-center::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: var(--color-teal-innovacion);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   2. CABECERA Y MENÚ DE NAVEGACIÓN (DISEÑO PREMIUM DISTRIBUIDO)
+   ========================================================================== */
+header {
+    background-color: var(--color-blanco-puro);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--color-borde-sutil);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.03);
+}
+
+/* Contenedor flexible estable */
+.cabecera-contenedor {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Forzamos el tamaño del logotipo para que no se achique en el index */
+.logo-marca {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    color: var(--color-pizarra-oscuro) !important;
+    text-decoration: none !important;
+    letter-spacing: -0.5px !important;
+    display: inline-block !important;
+}
+
+.logo-marca i {
+    color: var(--color-teal-innovacion) !important;
+    margin-right: 6px !important;
+}
+
+/* Forzamos el tamaño exacto de los enlaces de navegación */
+.nav-link {
+    color: var(--color-gris-subtitulos) !important;
+    font-weight: 500 !important; 
+    font-size: 0.95rem !important; /* <- Forzado con máxima prioridad */
+    line-height: 1.2 !important;   /* <- Asegura que no se aplaste verticalmente */
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    border-radius: 4px;
+    position: relative;
+    display: inline-block !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--color-teal-innovacion) !important;
+}
+
+/* Línea animada inferior */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-teal-innovacion);
+    transition: width 0.25s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 60%;
+}
+
+.nav-link.active {
+    color: var(--color-teal-innovacion) !important;
+    background-color: transparent !important;
+}
+
+.nav-link.active::after {
+    width: 60%;
+}
+
+/* ==========================================================================
+   3. BOTONES PERSONALIZADOS CORPORATIVOS
+   ========================================================================== */
+/* Reglas comunes de estructura para los botones */
+.btn-primary, 
+.btn-outline-secondary {
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    border-radius: 6px !important;
+    transition: var(--transicion-efecto);
+}
+
+/* Botón de Acción Principal (Turquesa Sólido) */
+.btn-primary {
+    background-color: var(--color-teal-innovacion) !important;
+    border-color: var(--color-teal-innovacion) !important;
+    color: var(--color-blanco-puro) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-teal-interactivo) !important;
+    border-color: var(--color-teal-interactivo) !important;
+    transform: translateY(-1px); /* Elevación milimétrica */
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2); /* Resplandor difuminado */
+}
+
+/* Botón de Acción Secundario (Fondo Transparente con Borde Pizarra) */
+.btn-outline-secondary {
+    color: var(--color-pizarra-oscuro) !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: var(--color-pizarra-oscuro) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--color-pizarra-oscuro) !important;
+    color: var(--color-blanco-puro) !important;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   4. TARJETAS ELEVADAS (GRID ADAPTATIVO DE SERVICIOS Y EQUIPO)
+   ========================================================================== */
+.card {
+    background-color: var(--color-blanco-puro);
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: var(--color-borde-sutil) !important;
+    border-radius: 8px !important;
+    /* Sombra difusa premium que simula profundidad */
+    box-shadow: 0 4px 15px -3px rgba(30, 41, 59, 0.04);
+    transition: var(--transicion-efecto);
+}
+
+/* Comportamiento dinámico al pasar el cursor sobre las tarjetas */
+.card:hover {
+    transform: translateY(-4px); /* Sube la tarjeta suavemente */
+    border-color: rgba(13, 148, 136, 0.2) !important; /* Tinta el borde de turquesa */
+    box-shadow: 0 12px 20px -5px rgba(30, 41, 59, 0.08) !important; /* Intensifica la sombra */
+}
+
+/* Ajuste de color para los iconos decorativos dentro de los bloques */
+.text-primary {
+    color: var(--color-teal-innovacion) !important;
+}
+
+.card-title {
+    color: var(--color-pizarra-oscuro);
+    font-size: 1.2rem;
+    margin-top: 8px;
+}
+
+/* ==========================================================================
+   5. FORMULARIO DE CONTACTO, DATOS Y MAPAS
+   ========================================================================== */
+/* Bloque exterior del Formulario de Mensajería */
+.formulario-contacto {
+    background-color: var(--color-blanco-puro);
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: var(--color-borde-sutil) !important;
+    border-radius: 8px !important;
+}
+
+/* Campos interactivos de texto, selectores y áreas de texto */
+.formulario-contacto .form-control, 
+.formulario-contacto .form-select {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: var(--color-blanco-puro);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-borde-sutil);
+    color: var(--color-pizarra-oscuro);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: var(--transicion-efecto);
+}
+
+/* Destacado perimetral cuando el usuario clica dentro de un campo */
+.formulario-contacto .form-control:focus, 
+.formulario-contacto .form-select:focus {
+    border-color: var(--color-teal-innovacion);
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1); /* Halo protector turquesa */
+    outline: none;
+}
+
+/* Recuadro lateral gris para la información física de contacto */
+.info-contacto {
+    background-color: var(--color-fondo-suave) !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: var(--color-borde-sutil) !important;
+    border-radius: 8px !important;
+}
+
+/* Contenedor elástico para el mapa integrado */
+.mapa-contenedor {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.mapa-contenedor iframe {
+    width: 100%;
+    display: block;
+    border: 0;
+}
+
+/* ==========================================================================
+   6. PIE DE PÁGINA (FOOTER INSTITUCIONAL)
+   ========================================================================== */
+footer {
+    background-color: var(--color-pizarra-oscuro);
+    color: #94a3b8; /* Gris azulado claro para los créditos del footer */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: auto; /* Empuja el pie abajo de forma automática */
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.05); /* Separador lineal casi invisible */
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+/* Enlaces para los iconos de redes sociales */
+.iconos-sociales a {
+    color: #64748b;
+    font-size: 1.3rem;
+    margin-left: 8px;
+    margin-right: 8px;
+    display: inline-block;
+    transition: var(--transicion-efecto);
+}
+
+.iconos-sociales a:hover {
+    color: var(--color-teal-innovacion);
+    transform: scale(1.1); /* Hace crecer el icono un 10% en el hover */
+}
+
+/* ==========================================================================
+   7. SECCIÓN DE ADAPTACIÓN RESPONSIVE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* En pantallas móviles cambiamos la cabecera a vertical para evitar desbordes */
+    .cabecera-contenedor {
+        flex-direction: column;
+        gap: 14px; /* Margen de separación entre el logotipo y el menú de navegación */
+        text-align: center;
+    }
+    
+    /* Disminución de escala para el nombre de marca en smartphones */
+    .logo-marca {
+        font-size: 1.15rem;
+    }
+
+    /* Comprimimos los paddings del menú para garantizar que quepan en pantallas estrechas */
+    .nav-link { 
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        font-size: 0.8rem; 
+    }
+    
+    /* Desactivamos los efectos de líneas expansivas inferiores en dispositivos táctiles */
+    .nav-link::after {
+        display: none !important;
+    }
+    
+    /* Reducción proporcional del tamaño de letra en títulos principales */
+    h2 { 
+        font-size: 1.5rem; 
+    }
+    
+    /* Menores rellenos de separación del footer en pantallas pequeñas */
+    footer { 
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}

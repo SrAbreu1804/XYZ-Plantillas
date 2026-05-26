@@ -71,6 +71,12 @@ const myProjects = [
         color: "text-success",
         link: "Giovani/plantillas/docs/plantilla-base/plantillas/ONG/index.html"
     },
+    {
+        name: "Consultorias",
+        icon: "bi bi-building-fill-gear",
+        color: "text-success",
+        link: "Giovani/plantillas/docs/plantilla-base/plantillas/Consultorias/index.html"
+    }
 
 ];  
 
