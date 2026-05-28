@@ -1,13 +1,13 @@
 :root {
-    --bg-sitio: #f8fafc;           /* Fondo grisáceo muy claro y limpio */
-    --bg-tarjetas: #ffffff;        /* Blanco puro para que las tarjetas resalten */
-    --color-principal: #2563eb;    /* Azul tecnológico para enlaces y botones */
-    --color-hover: #1d4ed8;        /* Azul más oscuro para interacciones */
+    --bg-sitio: #f8fafc;           
+    --bg-tarjetas: #ffffff;        
+    --color-principal: #2563eb;    
+    --color-hover: #1d4ed8;        
     
-    /* Colores de Texto (Garantizan lectura perfecta) */
-    --texto-negro: #0f172a;        /* Negro pizarra muy oscuro para títulos principales */
-    --texto-cuerpo: #334155;       /* Gris oscuro intenso para descripciones y párrafos */
-    --texto-mutated: #64748b;       /* Gris medio para textos secundarios o footer */
+    /* Colores de Texto */
+    --texto-negro: #0f172a;        
+    --texto-cuerpo: #334155;      
+    --texto-mutated: #64748b;       
     
     --sombra-suave: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     --sombra-fuerte: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -38,12 +38,11 @@ main {
 }
 
 /* ==========================================================================
-   3. CABECERA / MENÚ DE NAVEGACIÓN (EQUILIBRADO Y CENTRADO)
+   3. CABECERA / MENÚ DE NAVEGACIÓN 
    ========================================================================== */
 header {
     background-color: #ffffff !important;
     border-bottom: 1px solid #e2e8f0 !important;
-    position: sticky;
     top: 0;
     z-index: 1030;
 }
@@ -107,9 +106,8 @@ h2::after {
 }
 
 /* ==========================================================================
-   5. RETOQUES ESPECÍFICOS PARA LA SECCIÓN "NOSOTROS" (SOBRE MÍ)
+   5. RETOQUES ESPECÍFICOS PARA LA SECCIÓN "NOSOTROS"
    ========================================================================== */
-/* Reduce el espacio exagerado del encabezado de presentación */
 .py-5.bg-light, 
 main > section:first-of-type {
     padding-top: 3rem !important;
@@ -160,7 +158,7 @@ main .col-lg-8 {
 }
 
 /* ==========================================================================
-   6. TARJETAS DE PROYECTOS Y SERVICIOS (LEGIBILIDAD COMPLETA)
+   6. TARJETAS DE PROYECTOS Y SERVICIOS
    ========================================================================== */
 .card {
     background-color: var(--bg-tarjetas) !important;
@@ -196,7 +194,7 @@ main .col-lg-8 {
 }
 
 /* ==========================================================================
-   7. REDISEÑO DE LA TARJETA DE LLAMADA A LA ACCIÓN (CTA - SERVICIOS)
+   7. REDISEÑO DE LA TARJETA DE LLAMADA A LA ACCIÓN 
    ========================================================================== */
 .bg-primary {
     background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%) !important; 
@@ -288,7 +286,7 @@ main .col-lg-8 {
 }
 
 /* ==========================================================================
-   9. PIE DE PÁGINA (FOOTER)
+   9. PIE DE PÁGINA
    ========================================================================== */
 footer {
     background-color: #ffffff !important;
@@ -310,21 +308,74 @@ footer {
 }
 
 /* ==========================================================================
-   10. ADAPTACIÓN MÓVIL EXACTA (RESPONSIVE)
+   10. ADAPTACIÓN MÓVIL EXACTA 
    ========================================================================== */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        padding: 0.8rem 0;
+@media (max-width: 992px) {
+    header nav ul.nav {
+        flex-direction: row !important; /* Fuerza a mantenerse en línea horizontal */
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap !important; /* Si no cabe por completo, baja de forma limpia */
+        gap: 4px !important;
+    }
+
+    header nav ul.nav li.nav-item {
+        width: auto !important; /* Evita que ocupe todo el ancho en horizontal */
     }
 
     .nav-link {
-        width: 100%;
-        text-align: center;
+        width: auto !important;
+        padding: 0.5rem 0.8rem !important;
+        margin: 0 0.1rem !important;
+    }
+}
+
+/* SÓLO MÓVILES MUY ESTRECHOS EN VERTICAL (Pantallas menores a 576px de ancho) */
+@media (max-width: 576px) {
+    header {
+        position: relative !important; 
     }
 
+    header nav {
+        padding: 0.25rem 0 !important; 
+    }
+
+    header nav ul.nav {
+        flex-direction: column !important; 
+        gap: 2px !important; /* Junta más los enlaces para que no ocupen tanta altura */
+        padding: 0.25rem 0 !important;
+    }
+
+    header nav ul.nav li.nav-item {
+        width: 100% !important; 
+    }
+
+    .nav-link {
+        width: 100% !important;
+        text-align: center;
+        padding: 0.45rem 0 !important; /* Relleno compacto y estilizado */
+        margin: 0 !important;
+        font-size: 0.9rem !important; /* Letra sutilmente más pequeña para ahorrar espacio */
+    }
+
+    /* Ajustes de elementos generales en móviles verticales */
+    .btn-primary, .form-control {
+        width: 100% !important;
+    }
+    
+    .bg-primary {
+        padding: 2rem 1.25rem !important;
+    }
+    
+    .bg-primary .btn, 
+    .bg-primary .btn-outline-light {
+        width: 100% !important; 
+        text-align: center;
+    }
+}
+
+/* AJUSTES RESPONSIVE DE TEXTOS E IMÁGENES (Para cualquier pantalla menor a 768px) */
+@media (max-width: 768px) {
     h2 {
         font-size: 1.75rem;
         text-align: center;
@@ -338,7 +389,7 @@ footer {
         padding-bottom: 2.5rem !important;
     }
 
-    /* Corrección de apilamiento en la sección Nosotros */
+    /* Ajustes sección Nosotros */
     main section h1 {
         font-size: 2rem !important;
     }
@@ -357,21 +408,5 @@ footer {
     
     main img {
         max-height: 280px;
-    }
-}
-
-@media (max-width: 576px) {
-    .btn-primary, .form-control {
-        width: 100% !important;
-    }
-    
-    .bg-primary {
-        padding: 2rem 1.25rem !important;
-    }
-    
-    .bg-primary .btn, 
-    .bg-primary .btn-outline-light {
-        width: 100% !important; 
-        text-align: center;
     }
 }
